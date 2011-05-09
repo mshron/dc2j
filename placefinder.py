@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: latin-1 -*-
 import re
 
 
@@ -8,7 +10,7 @@ def names(name_re, s):
     return place.lower()
 
 def make_re():
-    name_re = re.compile(r'([A-Z][^,.:]+) -|(?:in | from | of | near | at | downtown )([A-Z][^,.:]+)')
+    name_re = re.compile(r'([A-Z][^,.:]+) +[,-–]|(?:in | from | of | near | at | downtown )([A-Z][^,.:]+)')
     return name_re
 
 def main():
@@ -22,6 +24,9 @@ def main():
     'gotham city'
     >>> names(name_re, 'Live from Gotham City. Not from Juneau, Alaska.')
     'gotham city'
+    >>> t = "SHREWSBURY, Massachusetts – As previously admitted, my morning regimen includes reading the comics while eating breakfast, and awhile ago Dagwood "
+    >>> names(name_re, t)
+    'shrewsbury'
     >>> names(name_re, 'Reporting live from Shrewsbury town hall')
     'shrewsbury'
     """
