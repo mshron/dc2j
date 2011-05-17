@@ -18,13 +18,15 @@ def names(name_re, s):
                 out.append(h)
     return out
 
-def make_re(places, split=99):
+def make_re(places, split=75):
     out = []
     p = groupby(enumerate(places.iterkeys()), lambda (i,x): i/split)
     pre_context = '(?: in | from | of | near | at | downtown )'
     for key,place_group in p:
         places = [place[1] for place in place_group]
-        pattern = r'%s('%pre_context + (')|%s('%pre_context).join(places)+ r')'
+        pattern = r'%s('%pre_context +\
+                  (')|%s('%pre_context).join(places)+\
+                  r')'
         r = re.compile(pattern)
         out.append(r)
     return out

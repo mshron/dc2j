@@ -16,7 +16,8 @@ def find_article_text(file, min_chars = 200):
 
 def get_placenames(files, place_re, max_files=100):
     out = []
-    for i,file in enumerate(files):
+    i = 0
+    for file in files:
         if i>max_files: break
         try:_f = open(file)
         except: continue
@@ -24,10 +25,11 @@ def get_placenames(files, place_re, max_files=100):
         try:
             out.append(placefinder.names(place_re,text))
         except IndexError:
-            pass
+            continue
+        i += 1
     return out
 
-def parse_location_file(filename="places_locations.psv"):
+def parse_location_file(filename="places_manymore_locations.psv"):
     reader = csv.reader(open(filename, 'r'), delimiter='|')
     places = {}
     for line in reader:
@@ -55,8 +57,10 @@ def nearest(pt, list):
     return closest
 
 def coverage(center, points):
-    d = np.abs(np.asarray(center)-np.asarray(points))
-    return np.median(d,0)
+    _d = np.abs(np.asarray(center)-np.asarray(points))
+    d_lat = filter(lambda x: x<2, _d[:,0])
+    d_lon = filter(lambda x: x<3, _d[:,1])
+    return [np.median(d_lat), np.median(d_lon)]
 
 def recurse_subdirectories(g):
     n = '/*'
@@ -72,14 +76,18 @@ def recurse_subdirectories(g):
 
 def main():
     files = recurse_subdirectories('www.broomfieldenterprise.com')
+    files = recurse_subdirectories('www.poughkeepsiejournal.com')
+    files = recurse_subdirectories('www.aspendailynews.com')
 
-    pt = (40.0149856,-105.2705456)
+    pt = (39.9205411,-105.0866504)
+    pt = (41.7003713,-73.9209701)
+    pt = (39.1910983,-106.8175387)
 
     places = parse_location_file()
     place_re = placefinder.make_re(places)
     sys.stderr.write('Created place regexp.\n')
 
-    names = get_placenames(files, place_re, 50)
+    names = get_placenames(files, place_re, 100)
     c = coordinates(names, places)
     n = lambda l: nearest(pt, l)
     c_nearest = map(n, c)
