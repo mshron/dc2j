@@ -1,0 +1,684 @@
+Downloading/unpacking jsonpipe
+  Getting page http://pypi.python.org/simple/jsonpipe
+  URLs to search for versions for jsonpipe:
+  * http://pypi.python.org/simple/jsonpipe
+  Getting page http://github.com/dvxhouse/jsonpipe
+  Analyzing links from page http://pypi.python.org/simple/jsonpipe/
+    Found link http://pypi.python.org/packages/source/j/jsonpipe/jsonpipe-0.0.7.tar.gz#md5=1c049360a4403999b84ccb2dde81c78b (from http://pypi.python.org/simple/jsonpipe/), version: 0.0.7
+    Found link http://pypi.python.org/packages/source/j/jsonpipe/jsonpipe-0.0.6.tar.gz#md5=a051123757c34c6d4329beff2a65c1c2 (from http://pypi.python.org/simple/jsonpipe/), version: 0.0.6
+    Found link http://pypi.python.org/packages/source/j/jsonpipe/jsonpipe-0.0.5.tar.gz#md5=cb207d3af077ec8d8aeacaf34fd099f1 (from http://pypi.python.org/simple/jsonpipe/), version: 0.0.5
+    Found link http://pypi.python.org/packages/source/j/jsonpipe/jsonpipe-0.0.4.tar.gz#md5=4f9bc854402e6d91cfc8e9693149ecaf (from http://pypi.python.org/simple/jsonpipe/), version: 0.0.4
+    Found link http://pypi.python.org/packages/source/j/jsonpipe/jsonpipe-0.0.3.tar.gz#md5=1f31de856a30c1c75c2a3b0f564af100 (from http://pypi.python.org/simple/jsonpipe/), version: 0.0.3
+    Found link http://pypi.python.org/packages/source/j/jsonpipe/jsonpipe-0.0.2.tar.gz#md5=b9e740be454e12fce299e284274b5584 (from http://pypi.python.org/simple/jsonpipe/), version: 0.0.2
+    Found link http://pypi.python.org/packages/source/j/jsonpipe/jsonpipe-0.0.1.tar.gz#md5=cae430665e46ddd4952e7f123150f4ed (from http://pypi.python.org/simple/jsonpipe/), version: 0.0.1
+    Skipping link http://github.com/dvxhouse/jsonpipe (from http://pypi.python.org/simple/jsonpipe/); not a file
+  Analyzing links from page https://github.com/dvxhouse/jsonpipe
+    Skipping link https://github.com/opensearch.xml (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .xml
+    Skipping link https://github.com/fluidicon.png (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .png
+    Skipping link https://d3nwyuy0nl342s.cloudfront.net/23b11c78e6d682b6584ea8c9f1357d6a2f2e5250/stylesheets/bundle_github.css (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .css
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master.atom (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .atom
+    Skipping link https://github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/plans (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/explore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/features (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/blog (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/login?return_to=%2Fdvxhouse%2Fjsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/admin (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/toggle_watch (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/fork (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/watchers (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/network (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/pulls (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/issues (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/graphs (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/branches (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.7 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .7
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.6 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .6
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.5 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .5
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.4 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .4
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.3 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .3
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.2 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .2
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.1 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .1
+    Skipping link https://github.com/dvxhouse/jsonpipe/downloads (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe#readme (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http:// (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link git://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link https://github.com/dvxhouse/jsonpipe/dismiss-tree-finder-help (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/zacharyvoase (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa/src (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/.gitignore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/2cb15bcbd43c71143c540e1ba21380e480991239 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/EXAMPLES.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/39a5fe620d576feeb07640492fcf5ddd7612ac1f (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/MANIFEST.in (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .in
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/fe34d10bf1fa1c9fdf6c2e97d982c71bb1d81f96 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/README.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/664ef133563a6726255206234e99bd92c60a2849 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/UNLICENSE (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/distribute_setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/example.json (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .json
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.w3.org/Tools/HTML-XML-utils/README (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://xmlstar.sourceforge.net/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://unlicense.org/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com%20 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspacecloud.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/contact (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/training (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://jobs.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://shop.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://developer.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://status.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/terms (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/privacy (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/security (from https://github.com/dvxhouse/jsonpipe); not a file
+  Analyzing links from page https://github.com/dvxhouse/jsonpipe
+    Skipping link https://github.com/opensearch.xml (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .xml
+    Skipping link https://github.com/fluidicon.png (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .png
+    Skipping link https://d3nwyuy0nl342s.cloudfront.net/23b11c78e6d682b6584ea8c9f1357d6a2f2e5250/stylesheets/bundle_github.css (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .css
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master.atom (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .atom
+    Skipping link https://github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/plans (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/explore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/features (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/blog (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/login?return_to=%2Fdvxhouse%2Fjsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/admin (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/toggle_watch (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/fork (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/watchers (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/network (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/pulls (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/issues (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/graphs (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/branches (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.7 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .7
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.6 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .6
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.5 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .5
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.4 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .4
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.3 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .3
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.2 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .2
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.1 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .1
+    Skipping link https://github.com/dvxhouse/jsonpipe/downloads (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe#readme (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http:// (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link git://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link https://github.com/dvxhouse/jsonpipe/dismiss-tree-finder-help (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/zacharyvoase (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa/src (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/.gitignore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/2cb15bcbd43c71143c540e1ba21380e480991239 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/EXAMPLES.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/39a5fe620d576feeb07640492fcf5ddd7612ac1f (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/MANIFEST.in (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .in
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/fe34d10bf1fa1c9fdf6c2e97d982c71bb1d81f96 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/README.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/664ef133563a6726255206234e99bd92c60a2849 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/UNLICENSE (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/distribute_setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/example.json (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .json
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.w3.org/Tools/HTML-XML-utils/README (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://xmlstar.sourceforge.net/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://unlicense.org/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com%20 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspacecloud.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/contact (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/training (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://jobs.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://shop.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://developer.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://status.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/terms (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/privacy (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/security (from https://github.com/dvxhouse/jsonpipe); not a file
+  Analyzing links from page https://github.com/dvxhouse/jsonpipe
+    Skipping link https://github.com/opensearch.xml (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .xml
+    Skipping link https://github.com/fluidicon.png (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .png
+    Skipping link https://d3nwyuy0nl342s.cloudfront.net/23b11c78e6d682b6584ea8c9f1357d6a2f2e5250/stylesheets/bundle_github.css (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .css
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master.atom (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .atom
+    Skipping link https://github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/plans (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/explore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/features (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/blog (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/login?return_to=%2Fdvxhouse%2Fjsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/admin (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/toggle_watch (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/fork (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/watchers (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/network (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/pulls (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/issues (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/graphs (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/branches (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.7 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .7
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.6 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .6
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.5 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .5
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.4 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .4
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.3 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .3
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.2 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .2
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.1 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .1
+    Skipping link https://github.com/dvxhouse/jsonpipe/downloads (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe#readme (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http:// (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link git://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link https://github.com/dvxhouse/jsonpipe/dismiss-tree-finder-help (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/zacharyvoase (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa/src (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/.gitignore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/2cb15bcbd43c71143c540e1ba21380e480991239 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/EXAMPLES.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/39a5fe620d576feeb07640492fcf5ddd7612ac1f (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/MANIFEST.in (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .in
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/fe34d10bf1fa1c9fdf6c2e97d982c71bb1d81f96 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/README.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/664ef133563a6726255206234e99bd92c60a2849 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/UNLICENSE (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/distribute_setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/example.json (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .json
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.w3.org/Tools/HTML-XML-utils/README (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://xmlstar.sourceforge.net/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://unlicense.org/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com%20 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspacecloud.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/contact (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/training (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://jobs.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://shop.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://developer.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://status.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/terms (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/privacy (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/security (from https://github.com/dvxhouse/jsonpipe); not a file
+  Analyzing links from page https://github.com/dvxhouse/jsonpipe
+    Skipping link https://github.com/opensearch.xml (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .xml
+    Skipping link https://github.com/fluidicon.png (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .png
+    Skipping link https://d3nwyuy0nl342s.cloudfront.net/23b11c78e6d682b6584ea8c9f1357d6a2f2e5250/stylesheets/bundle_github.css (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .css
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master.atom (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .atom
+    Skipping link https://github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/plans (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/explore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/features (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/blog (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/login?return_to=%2Fdvxhouse%2Fjsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/admin (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/toggle_watch (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/fork (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/watchers (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/network (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/pulls (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/issues (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/graphs (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/branches (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.7 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .7
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.6 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .6
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.5 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .5
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.4 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .4
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.3 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .3
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.2 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .2
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.1 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .1
+    Skipping link https://github.com/dvxhouse/jsonpipe/downloads (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe#readme (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http:// (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link git://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link https://github.com/dvxhouse/jsonpipe/dismiss-tree-finder-help (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/zacharyvoase (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa/src (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/.gitignore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/2cb15bcbd43c71143c540e1ba21380e480991239 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/EXAMPLES.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/39a5fe620d576feeb07640492fcf5ddd7612ac1f (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/MANIFEST.in (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .in
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/fe34d10bf1fa1c9fdf6c2e97d982c71bb1d81f96 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/README.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/664ef133563a6726255206234e99bd92c60a2849 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/UNLICENSE (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/distribute_setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/example.json (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .json
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.w3.org/Tools/HTML-XML-utils/README (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://xmlstar.sourceforge.net/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://unlicense.org/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com%20 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspacecloud.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/contact (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/training (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://jobs.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://shop.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://developer.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://status.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/terms (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/privacy (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/security (from https://github.com/dvxhouse/jsonpipe); not a file
+  Analyzing links from page https://github.com/dvxhouse/jsonpipe
+    Skipping link https://github.com/opensearch.xml (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .xml
+    Skipping link https://github.com/fluidicon.png (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .png
+    Skipping link https://d3nwyuy0nl342s.cloudfront.net/23b11c78e6d682b6584ea8c9f1357d6a2f2e5250/stylesheets/bundle_github.css (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .css
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master.atom (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .atom
+    Skipping link https://github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/plans (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/explore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/features (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/blog (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/login?return_to=%2Fdvxhouse%2Fjsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/admin (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/toggle_watch (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/fork (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/watchers (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/network (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/pulls (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/issues (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/graphs (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/branches (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.7 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .7
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.6 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .6
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.5 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .5
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.4 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .4
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.3 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .3
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.2 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .2
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.1 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .1
+    Skipping link https://github.com/dvxhouse/jsonpipe/downloads (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe#readme (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http:// (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link git://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link https://github.com/dvxhouse/jsonpipe/dismiss-tree-finder-help (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/zacharyvoase (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa/src (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/.gitignore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/2cb15bcbd43c71143c540e1ba21380e480991239 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/EXAMPLES.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/39a5fe620d576feeb07640492fcf5ddd7612ac1f (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/MANIFEST.in (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .in
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/fe34d10bf1fa1c9fdf6c2e97d982c71bb1d81f96 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/README.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/664ef133563a6726255206234e99bd92c60a2849 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/UNLICENSE (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/distribute_setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/example.json (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .json
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.w3.org/Tools/HTML-XML-utils/README (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://xmlstar.sourceforge.net/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://unlicense.org/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com%20 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspacecloud.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/contact (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/training (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://jobs.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://shop.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://developer.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://status.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/terms (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/privacy (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/security (from https://github.com/dvxhouse/jsonpipe); not a file
+  Analyzing links from page https://github.com/dvxhouse/jsonpipe
+    Skipping link https://github.com/opensearch.xml (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .xml
+    Skipping link https://github.com/fluidicon.png (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .png
+    Skipping link https://d3nwyuy0nl342s.cloudfront.net/23b11c78e6d682b6584ea8c9f1357d6a2f2e5250/stylesheets/bundle_github.css (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .css
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master.atom (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .atom
+    Skipping link https://github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/plans (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/explore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/features (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/blog (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/login?return_to=%2Fdvxhouse%2Fjsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/admin (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/toggle_watch (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/fork (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/watchers (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/network (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/pulls (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/issues (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/graphs (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/branches (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.7 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .7
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.6 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .6
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.5 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .5
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.4 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .4
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.3 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .3
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.2 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .2
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.1 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .1
+    Skipping link https://github.com/dvxhouse/jsonpipe/downloads (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe#readme (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http:// (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link git://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link https://github.com/dvxhouse/jsonpipe/dismiss-tree-finder-help (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/zacharyvoase (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa/src (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/.gitignore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/2cb15bcbd43c71143c540e1ba21380e480991239 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/EXAMPLES.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/39a5fe620d576feeb07640492fcf5ddd7612ac1f (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/MANIFEST.in (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .in
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/fe34d10bf1fa1c9fdf6c2e97d982c71bb1d81f96 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/README.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/664ef133563a6726255206234e99bd92c60a2849 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/UNLICENSE (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/distribute_setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/example.json (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .json
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.w3.org/Tools/HTML-XML-utils/README (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://xmlstar.sourceforge.net/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://unlicense.org/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com%20 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspacecloud.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/contact (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/training (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://jobs.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://shop.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://developer.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://status.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/terms (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/privacy (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/security (from https://github.com/dvxhouse/jsonpipe); not a file
+  Analyzing links from page https://github.com/dvxhouse/jsonpipe
+    Skipping link https://github.com/opensearch.xml (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .xml
+    Skipping link https://github.com/fluidicon.png (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .png
+    Skipping link https://d3nwyuy0nl342s.cloudfront.net/23b11c78e6d682b6584ea8c9f1357d6a2f2e5250/stylesheets/bundle_github.css (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .css
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master.atom (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .atom
+    Skipping link https://github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/plans (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/explore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/features (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/blog (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/login?return_to=%2Fdvxhouse%2Fjsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/admin (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/toggle_watch (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/fork (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/watchers (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/network (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/pulls (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/issues (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/graphs (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/branches (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.7 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .7
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.6 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .6
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.5 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .5
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.4 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .4
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.3 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .3
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.2 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .2
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.1 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .1
+    Skipping link https://github.com/dvxhouse/jsonpipe/downloads (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe#readme (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http:// (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link git://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link https://github.com/dvxhouse/jsonpipe/dismiss-tree-finder-help (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/zacharyvoase (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa/src (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/.gitignore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/2cb15bcbd43c71143c540e1ba21380e480991239 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/EXAMPLES.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/39a5fe620d576feeb07640492fcf5ddd7612ac1f (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/MANIFEST.in (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .in
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/fe34d10bf1fa1c9fdf6c2e97d982c71bb1d81f96 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/README.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/664ef133563a6726255206234e99bd92c60a2849 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/UNLICENSE (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/distribute_setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/example.json (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .json
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.w3.org/Tools/HTML-XML-utils/README (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://xmlstar.sourceforge.net/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://unlicense.org/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com%20 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspacecloud.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/contact (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/training (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://jobs.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://shop.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://developer.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://status.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/terms (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/privacy (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/security (from https://github.com/dvxhouse/jsonpipe); not a file
+  Analyzing links from page https://github.com/dvxhouse/jsonpipe
+    Skipping link https://github.com/opensearch.xml (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .xml
+    Skipping link https://github.com/fluidicon.png (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .png
+    Skipping link https://d3nwyuy0nl342s.cloudfront.net/23b11c78e6d682b6584ea8c9f1357d6a2f2e5250/stylesheets/bundle_github.css (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .css
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master.atom (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .atom
+    Skipping link https://github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/plans (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/explore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/features (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/blog (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/login?return_to=%2Fdvxhouse%2Fjsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/admin (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/toggle_watch (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/fork (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/watchers (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/network (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/pulls (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/issues (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/graphs (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/branches (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.7 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .7
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.6 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .6
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.5 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .5
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.4 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .4
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.3 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .3
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.2 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .2
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/v0.0.1 (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .1
+    Skipping link https://github.com/dvxhouse/jsonpipe/downloads (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe#readme (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http:// (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link git://github.com/dvxhouse/jsonpipe.git (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .git
+    Skipping link https://github.com/dvxhouse/jsonpipe/dismiss-tree-finder-help (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/1913e45486a91b9b2623f3d2a4c71918ae3940aa (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/zacharyvoase (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commits/master/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/tree/1913e45486a91b9b2623f3d2a4c71918ae3940aa/src (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/.gitignore (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/2cb15bcbd43c71143c540e1ba21380e480991239 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/EXAMPLES.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/39a5fe620d576feeb07640492fcf5ddd7612ac1f (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/MANIFEST.in (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .in
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/fe34d10bf1fa1c9fdf6c2e97d982c71bb1d81f96 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/README.rst (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .rst
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/664ef133563a6726255206234e99bd92c60a2849 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/UNLICENSE (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/distribute_setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/example.json (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .json
+    Skipping link https://github.com/dvxhouse/jsonpipe/blob/1913e45486a91b9b2623f3d2a4c71918ae3940aa/setup.py (from https://github.com/dvxhouse/jsonpipe); unknown archive format: .py
+    Skipping link https://github.com/dvxhouse/jsonpipe/commit/01f38b69a7519f3d22715421636468bec0fcdc29 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.w3.org/Tools/HTML-XML-utils/README (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://xmlstar.sourceforge.net/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://unlicense.org/ (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspace.com%20 (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://www.rackspacecloud.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/contact (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/training (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://jobs.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://shop.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://developer.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link http://status.github.com (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/terms (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/site/privacy (from https://github.com/dvxhouse/jsonpipe); not a file
+    Skipping link https://github.com/security (from https://github.com/dvxhouse/jsonpipe); not a file
+  Using version 0.0.7 (newest of versions: 0.0.7, 0.0.6, 0.0.5, 0.0.4, 0.0.3, 0.0.2, 0.0.1)
+  Downloading jsonpipe-0.0.7.tar.gz
+  Downloading from URL http://pypi.python.org/packages/source/j/jsonpipe/jsonpipe-0.0.7.tar.gz#md5=1c049360a4403999b84ccb2dde81c78b (from http://pypi.python.org/simple/jsonpipe/)
+  Running setup.py egg_info for package jsonpipe
+    The required version of distribute (>=0.6.14) is not available,
+    and can't be installed while this script is running. Please
+    install a more recent version first, using
+    'easy_install -U distribute'.
+    
+    (Currently using distribute 0.6.10 (/usr/lib/python2.6/dist-packages))
+    Complete output from command python setup.py egg_info:
+    The required version of distribute (>=0.6.14) is not available,
+
+and can't be installed while this script is running. Please
+
+install a more recent version first, using
+
+'easy_install -U distribute'.
+
+
+
+(Currently using distribute 0.6.10 (/usr/lib/python2.6/dist-packages))
+
+----------------------------------------
+Command python setup.py egg_info failed with error code 2
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1775, in install_files
+    req_to_install.run_egg_info()
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1346, in run_egg_info
+    command_desc='python setup.py egg_info')
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 3543, in call_subprocess
+    % (command_desc, proc.returncode))
+InstallationError: Command python setup.py egg_info failed with error code 2
+------------------------------------------------------------
+/usr/bin/pip run on Sat May 14 16:57:24 2011
+Downloading/unpacking jsonpipe
+  Running setup.py egg_info for package jsonpipe
+    The required version of distribute (>=0.6.14) is not available,
+    and can't be installed while this script is running. Please
+    install a more recent version first, using
+    'easy_install -U distribute'.
+    
+    (Currently using distribute 0.6.10 (/usr/lib/python2.6/dist-packages))
+    Complete output from command python setup.py egg_info:
+    The required version of distribute (>=0.6.14) is not available,
+
+and can't be installed while this script is running. Please
+
+install a more recent version first, using
+
+'easy_install -U distribute'.
+
+
+
+(Currently using distribute 0.6.10 (/usr/lib/python2.6/dist-packages))
+
+----------------------------------------
+Command python setup.py egg_info failed with error code 2
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1775, in install_files
+    req_to_install.run_egg_info()
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1346, in run_egg_info
+    command_desc='python setup.py egg_info')
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 3543, in call_subprocess
+    % (command_desc, proc.returncode))
+InstallationError: Command python setup.py egg_info failed with error code 2
+------------------------------------------------------------
+/usr/bin/pip run on Sat May 14 16:58:04 2011
+Downloading/unpacking jsonpipe
+  Running setup.py egg_info for package jsonpipe
+    running egg_info
+    creating pip-egg-info/jsonpipe.egg-info
+    writing requirements to pip-egg-info/jsonpipe.egg-info/requires.txt
+    writing pip-egg-info/jsonpipe.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/jsonpipe.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/jsonpipe.egg-info/dependency_links.txt
+    writing entry points to pip-egg-info/jsonpipe.egg-info/entry_points.txt
+    writing manifest file 'pip-egg-info/jsonpipe.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    reading manifest file 'pip-egg-info/jsonpipe.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    writing manifest file 'pip-egg-info/jsonpipe.egg-info/SOURCES.txt'
+  Source in ./build/jsonpipe has version 0.0.7, which satisfies requirement jsonpipe
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1721, in install_files
+    if req_to_install.check_if_exists():
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1583, in check_if_exists
+    dist = pkg_resources.get_distribution(self.req)
+  File "/usr/local/lib/python2.6/dist-packages/distribute-0.6.16-py2.6.egg/pkg_resources.py", line 298, in get_distribution
+    if isinstance(dist,Requirement): dist = get_provider(dist)
+  File "/usr/local/lib/python2.6/dist-packages/distribute-0.6.16-py2.6.egg/pkg_resources.py", line 177, in get_provider
+    return working_set.find(moduleOrReq) or require(str(moduleOrReq))[0]
+  File "/usr/local/lib/python2.6/dist-packages/distribute-0.6.16-py2.6.egg/pkg_resources.py", line 442, in find
+    raise VersionConflict(dist,req)     # XXX add more info
+VersionConflict: (simplejson 2.0.9 (/usr/lib/pymodules/python2.6), Requirement.parse('simplejson>=2.1.3'))
