@@ -8,8 +8,10 @@ import placefinder
 import csv
 import sys
 import numpy as np
+import logging
 
 def find_article_text(file, min_chars = 200):
+    logging.info('extracting article text for %s'%file.name)
     soup = BeautifulSoup(''.join(file.read()))
     paragraphs = soup.findAll('p')
     return ' '.join([p.text for p in paragraphs if len(p.text)>min_chars])
@@ -74,32 +76,38 @@ def recurse_subdirectories(g):
         sofar.extend(next)
     return sofar
 
-def run_on(dir, pt):
-    files = recurse_subdirectories(dir)
-
+def run_on(dirs, pts):
     places = parse_location_file()
-    place_re = placefinder.make_re()
+    place_re = placefinder.make_re(places)
     sys.stderr.write('Created place regexp.\n')
 
-    names = get_placenames(files, place_re, 100)
-    c = coordinates(names, places)
-    n = lambda l: nearest(pt, l)
-    c_nearest = map(n, c)
-    print c_nearest
-    cov = coverage(pt, c_nearest)
-    print cov
+    for dir, pt in zip(dirs, pts):
+      files = recurse_subdirectories(dir)
+      names = get_placenames(files, place_re, 100)
+      print names
+      c = coordinates(names, places)
+      n = lambda l: nearest(pt, l)
+      c_nearest = map(n, c)
+      print c_nearest
+      cov = coverage(pt, c_nearest)
+      print cov
 
 def main():
-    run_on('www.poughkeepsiejournal.com', (39.9205411,-105.0866504))
-    # files = recurse_subdirectories('www.poughkeepsiejournal.com')
-    # files = recurse_subdirectories('www.aspendailynews.com')
-    # files = recurse_subdirectories('www.suntimes.com')
-    # files = recurse_subdirectories('www.southbendtribune.com')
-
-    # pt = (41.7003713,-73.9209701)
-    # pt = (39.1910983,-106.8175387)
-    # pt = (41.887610,-87.636057)
-    # pt = (41.6725, -86.255278)
+    dirs = [
+      'www.broomfieldenterprise.com',
+      'www.poughkeepsiejournal.com',
+      'www.aspendailynews.com',
+      'www.suntimes.com',
+      'www.southbendtribune.com'
+    ]
+    pts = [
+      (39.9205411,-105.0866504),
+      (41.7003713,-73.9209701),
+      (39.1910983,-106.8175387),
+      (41.887610,-87.636057),
+      (41.6725, -86.255278)
+    ]
+    run_on(dirs, pts)
 
 
 if __name__ == "__main__":
