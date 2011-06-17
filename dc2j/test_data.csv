@@ -1,0 +1,4 @@
+nid,name,url,lat,lng,offsetLat,offsetLng
+0,"Poughkeepsie Journal",http://www.poughkeepsiejournal.com,41.7003713,-73.9209701,0.19555540000000349, 0.085002799999998047
+1,"Aspen Daily News",http://www.aspendailynews.com,39.1910983,-106.8175387,1.0569173000000021, 0.16861729999999397
+2,"Chicago Sun-Times",http://www.suntimes.com,41.887610,-87.636057,0.43464989999999659, 1.3938468999999998
