@@ -74,19 +74,11 @@ def recurse_subdirectories(g):
         sofar.extend(next)
     return sofar
 
-def main():
-    files = recurse_subdirectories('www.broomfieldenterprise.com')
-    files = recurse_subdirectories('www.poughkeepsiejournal.com')
-    files = recurse_subdirectories('www.aspendailynews.com')
-    files = recurse_subdirectories('www.suntimes.com')
-
-    pt = (39.9205411,-105.0866504)
-    pt = (41.7003713,-73.9209701)
-    pt = (39.1910983,-106.8175387)
-    pt = (41.887610,-87.636057)
+def run_on(dir, pt):
+    files = recurse_subdirectories(dir)
 
     places = parse_location_file()
-    place_re = placefinder.make_re(places)
+    place_re = placefinder.make_re()
     sys.stderr.write('Created place regexp.\n')
 
     names = get_placenames(files, place_re, 100)
@@ -96,6 +88,18 @@ def main():
     print c_nearest
     cov = coverage(pt, c_nearest)
     print cov
+
+def main():
+    run_on('www.poughkeepsiejournal.com', (39.9205411,-105.0866504))
+    # files = recurse_subdirectories('www.poughkeepsiejournal.com')
+    # files = recurse_subdirectories('www.aspendailynews.com')
+    # files = recurse_subdirectories('www.suntimes.com')
+    # files = recurse_subdirectories('www.southbendtribune.com')
+
+    # pt = (41.7003713,-73.9209701)
+    # pt = (39.1910983,-106.8175387)
+    # pt = (41.887610,-87.636057)
+    # pt = (41.6725, -86.255278)
 
 
 if __name__ == "__main__":
