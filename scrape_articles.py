@@ -8,8 +8,10 @@ import placefinder
 import csv
 import sys
 import numpy as np
+import logging
 
 def find_article_text(file, min_chars = 200):
+    logging.info('extracting article text for %s'%file.name)
     soup = BeautifulSoup(''.join(file.read()))
     paragraphs = soup.findAll('p')
     return ' '.join([p.text for p in paragraphs if len(p.text)>min_chars])
@@ -75,6 +77,7 @@ def recurse_subdirectories(g):
     return sofar
 
 def main():
+        
     files = recurse_subdirectories('www.broomfieldenterprise.com')
     files = recurse_subdirectories('www.poughkeepsiejournal.com')
     files = recurse_subdirectories('www.aspendailynews.com')
@@ -90,6 +93,7 @@ def main():
     sys.stderr.write('Created place regexp.\n')
 
     names = get_placenames(files, place_re, 100)
+    print names
     c = coordinates(names, places)
     n = lambda l: nearest(pt, l)
     c_nearest = map(n, c)
