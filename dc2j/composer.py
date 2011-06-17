@@ -229,8 +229,7 @@ def main():
             [('/newspapers', Newspapers),
             ('/journalists', Journalists),
             ('/simplepolldc', SimplePollDC),
-            ('/querydc',QueryProjectDC)
-            ('/task/querydc', QueryProjectDC)
+            ('/task/querydc', QueryProjectDC),
             ('/cron/unmodified', FindUnmodifiedCron)],
                             debug=True)
     run_wsgi_app(application)
