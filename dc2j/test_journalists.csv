@@ -1,0 +1,3 @@
+nid,email,isPerson,name
+0,editor@foo.bar,n,
+1,mrfoo@foo.bar,y,Mr. Foo

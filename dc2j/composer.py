@@ -8,6 +8,8 @@ from google.appengine.ext import db
 from django.utils import simplejson as json
 
 from urllib import urlencode
+from datetime import datetime, timedelta
+from random import randint
 import csv
 
 ## hardcoded constants
@@ -22,10 +24,12 @@ class Newspaper(db.Model):
     name = db.StringProperty()
 
 class Journalist(db.Model):
-    newspaper = db.ReferenceProperty(reference_class=Newspaper)
-    email = db.EmailProperty(required=True)
+    newspaper = db.ReferenceProperty(reference_class=Newspaper, 
+                                    required=True)
+    jid = db.StringProperty(required=True)
+    email = db.EmailProperty()
     threshold = db.FloatProperty()
-    hasName = db.BooleanProperty(required=True)
+    isPerson = db.BooleanProperty()
     fullName = db.StringProperty()
 
 class Proposal(db.Expando):
@@ -94,7 +98,18 @@ class SimplePollDC(webapp.RequestHandler):
             dcid = proposal['id']
             _p = Proposal.all().filter('dcid =', dcid).fetch(1)
             if len(_p) == 0: self.insert(proposal, n)
-            else: self.update(_p[0], proposal, n)
+            else: self.update(_p, proposal, n)
+
+class FindUnmodifiedCron(webapp.RequestHandler):
+    def get(self):
+        now = datetime.now()
+        then = now - timedelta(60*24*7) #1 week ago
+        query = Proposal.all()
+        query.filter("time <=", now)
+        for proposal in query:
+            params = {'dcid': proposal.dcid}
+            t = Task(url='/task/querydc', params=params)
+            t.add()
 
 #called by cron job that finds week-long unmodified proposals
 class QueryProjectDC(webapp.RequestHandler): 
@@ -135,6 +150,7 @@ class QueryProjectDC(webapp.RequestHandler):
             # this could use a key to save a db call,
             # at the expense of API sloppiness
             t = Task(url="/alert", params={'dcid': dcid})
+            t.add()
             
 class SendAlerts(webapp.RequestHandler):
     def post(self):
@@ -182,10 +198,40 @@ class Newspapers(webapp.RequestHandler):
         n = Newspaper.all().filter('nid =', nid).fetch(10)
         self.response.out.write(str(n))
 
+class Journalists(webapp.RequestHandler):
+    def put(self):
+        rows = csv.reader(self.request.body_file)
+        for i,row in enumerate(rows):
+            if i == 0:
+                titles = row
+                continue
+            if len(row) == 0: continue
+            data = dict(zip(titles, row))
+            nid = data['nid']
+            _n = Newspaper.all().filter('nid =', nid).fetch(1)
+            if _n: n = _n[0]
+            else:
+                msg = "Line %i - newspaper %s not found"%(i, nid)
+                self.response.out.write(msg)
+                continue
+            # be careful -- not idempotent!
+            jid = hex(randint(0,2**32))[2:] 
+            j = Journalist(jid = jid, newspaper = n)
+            j.email = data['email']
+            j.threshold = .5
+            j.isPerson = data['isPerson'].lower() in \
+                         ['y', 'yes', 't', 'true'] 
+            j.fullName = data['name']
+            j.put()
+
 def main():
-    application = webapp.WSGIApplication([('/newspapers', Newspapers),
-                                          ('/simplepolldc', SimplePollDC),
-                                          ('/querydc',QueryProjectDC)],
+    application = webapp.WSGIApplication(
+            [('/newspapers', Newspapers),
+            ('/journalists', Journalists),
+            ('/simplepolldc', SimplePollDC),
+            ('/querydc',QueryProjectDC)
+            ('/task/querydc', QueryProjectDC)
+            ('/cron/unmodified', FindUnmodifiedCron)],
                             debug=True)
     run_wsgi_app(application)
             
