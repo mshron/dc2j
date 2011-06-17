@@ -20,9 +20,13 @@ def get_placenames(files, place_re, max_files=100):
     out = []
     i = 0
     for file in files:
+        logging.info('looking for places in file: %s'%file.name)
         if i>max_files: break
-        try:_f = open(file)
-        except: continue
+        try:
+            _f = open(file)
+        except:
+            logging.info('failed to open %s'file.name)
+            continue
         text = find_article_text(_f)
         try:
             out.append(placefinder.names(place_re,text))
@@ -41,7 +45,7 @@ def parse_location_file(filename="places_manymore_locations.psv"):
 
 def coordinates(_names, places):
     out = []
-    flat_names = reduce(lambda x,y: x+y,reduce(lambda x,y: x+y, _names))
+    flat_names = reduce(lambda x,y: x+y, reduce(lambda x,y: x+y, _names))
     names = filter(lambda x: len(x)>0, flat_names)
     print names
     for name in names:
@@ -108,7 +112,6 @@ def main():
       (41.6725, -86.255278)
     ]
     run_on(dirs, pts)
-
 
 if __name__ == "__main__":
     main()
