@@ -25,7 +25,7 @@ def get_placenames(files, place_re, max_files=100):
         try:
             _f = open(file)
         except:
-            logging.info('failed to open %s'file.name)
+            logging.info('failed to open %s' % file.name)
             continue
         text = find_article_text(_f)
         try:
