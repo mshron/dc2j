@@ -211,7 +211,7 @@ class Journalists(webapp.RequestHandler):
             _n = Newspaper.all().filter('nid =', nid).fetch(1)
             if _n: n = _n[0]
             else:
-                msg = "Line %i - newspaper %s not found"%(i, nid)
+                msg = "Line %i - newspaper %s not found\n"%(i, nid)
                 self.response.out.write(msg)
                 continue
             # be careful -- not idempotent!
@@ -223,6 +223,7 @@ class Journalists(webapp.RequestHandler):
                          ['y', 'yes', 't', 'true'] 
             j.fullName = data['name']
             j.put()
+
 
 def main():
     application = webapp.WSGIApplication(
