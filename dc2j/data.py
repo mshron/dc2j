@@ -151,7 +151,7 @@ class QueryProjectDC(webapp.RequestHandler):
     def augment(self, p, pro):
         p.teacher = pro['teacherName']
         p.fulfillmentTrailer = pro['fulfillmentTrailer']
-        p.shortDescription = pro['shortDescription']
+        #p.shortDescription = pro['shortDescription']
         p.schoolLatLat = db.GeoPt(pro['latitude'], pro['longitude'])
         p.money = pro['totalPrice']
         p.city = pro['city']
@@ -181,18 +181,6 @@ class QueryProjectDC(webapp.RequestHandler):
             t = Task(url="/compose/go", params={'dcid': dcid})
             t.add()
             
-class SendAlerts(webapp.RequestHandler):
-    def post(self):
-        dcid = self.request.get('dcid')
-        _p = Proposal.all().filter('dcid =', dcid).fetch(1)
-        if len(_p)==0:
-            self.error(404)
-            return
-        p = _p[0]
-
-    
-
-
 def main():
     application = webapp.WSGIApplication(
             [('/data/newspapers', Newspapers),
