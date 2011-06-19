@@ -39,11 +39,14 @@ class Proposal(db.Expando):
     status = db.StringProperty()
     teacher = db.StringProperty()
     fulfillmentTrailer = db.StringProperty()
+    shortDescription = db.StringProperty()
     schoolLatLng = db.GeoPtProperty()
     money = db.IntegerProperty()
     city = db.StringProperty()
     state = db.StringProperty()
     newspapers = db.ListProperty(db.Key)
+    subject = db.StringProperty()
+    resource = db.StringProperty()
     time = db.DateTimeProperty(auto_now=True)
 
 
@@ -125,12 +128,15 @@ class QueryProjectDC(webapp.RequestHandler):
         return data
 
     def augment(self, p, pro):
-        p.teacher = pro['teacherName'],
-        p.fulfillmentTrailer = pro['fulfillmentTrailer'],
-        p.schoolLatLat = db.GeoPt(pro['latitude'], pro['longitude']),
-        p.money = pro['totalPrice'],
-        p.city = pro['city'],
+        p.teacher = pro['teacherName']
+        p.fulfillmentTrailer = pro['fulfillmentTrailer']
+        p.shortDescription = pro['shortDescription']
+        p.schoolLatLat = db.GeoPt(pro['latitude'], pro['longitude'])
+        p.money = pro['totalPrice']
+        p.city = pro['city']
         p.state = pro['state']
+        p.resource = pro['resource']['name']
+        p.subject = pro['subject']['name']
         p.put()
 
     def post(self):
