@@ -60,13 +60,15 @@ class Journalists(webapp.RequestHandler):
                 continue
             # be careful -- not idempotent!
             jid = hex(randint(0,2**32))[2:] 
-            j = Journalist(jid = jid, newspaper = n)
+            j = Journalist(jid = jid)
             j.email = data['email']
             j.threshold = .5
             j.isPerson = data['isPerson'].lower() in \
                          ['y', 'yes', 't', 'true'] 
             j.fullName = data['name']
             j.put()
+            n.journalists.append(j.key())
+            n.put()
 
 
 # called to insert DC data into the db

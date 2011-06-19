@@ -17,14 +17,13 @@ DCapi = "http://api.donorschoose.org/common/json_feed.html?APIKey=73zfti7me2in&"
 class Newspaper(db.Model):
     url = db.LinkProperty(required=True)
     nid = db.StringProperty(required=True)
+    journalists = db.ListProperty(db.Key)
     centerLatLng = db.GeoPtProperty()
     nwLatLng = db.GeoPtProperty()
     seLatLng = db.GeoPtProperty()
     name = db.StringProperty()
 
 class Journalist(db.Model):
-    newspaper = db.ReferenceProperty(reference_class=Newspaper, 
-                                    required=True)
     jid = db.StringProperty(required=True)
     email = db.EmailProperty()
     threshold = db.FloatProperty()
@@ -38,6 +37,7 @@ class Proposal(db.Expando):
     accessfails = db.IntegerProperty()
     status = db.StringProperty()
     time = db.DateTimeProperty(auto_now=True)
+    newspapers = db.ListProperty(db.Key)
 
 ## expando...
 #    teacher = db.StringProperty()
@@ -47,7 +47,6 @@ class Proposal(db.Expando):
 #    money = db.IntegerProperty()
 #    city = db.StringProperty()
 #    state = db.StringProperty()
-#    newspapers = db.ListProperty(db.Key)
 #    subject = db.StringProperty()
 #    resource = db.StringProperty()
 

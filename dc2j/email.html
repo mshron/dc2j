@@ -7,7 +7,7 @@
     {% if extras.instate %} {{ extras.numInstateDonorsText }} from in-state gave money. {% endif %} 
     {% if extras.outofstate %} {{ extras.numOutstateDonorsText }} from out-of-state gave money. {% endif %} This is the teacher's {{ extras.numTeacherProjectsText }} project on <a href="http://www.donorschoose.org">DonorsChoose</a>, a free micro-philanthropy site for front-line public school educators.</p>
     </p>
-    {% for donor in donors %}
+    {% for donor in extras.donors %}
         <p>
         {% if donor.anonymous %} An anonymous donor {% else %} {{ donor.name }} {% endif %} from {{ donor.state }} said:
         </p>
