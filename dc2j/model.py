@@ -52,4 +52,9 @@ class Proposal(db.Expando):
 #    subject = db.StringProperty()
 #    resource = db.StringProperty()
 
-
+class Letters(db.Model):
+    html = db.Text()
+    journalist = db.String()
+    newspaper = db.String()
+    time = db.DateTimeProperty(auto_now=True)
+    nurl = db.LinkProperty()

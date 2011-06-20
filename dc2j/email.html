@@ -9,7 +9,7 @@
     </p>
     {% for donor in extras.donors %}
         <p>
-        {% if donor.anonymous %} An anonymous donor {% else %} {{ donor.name }} {% endif %} from {{ donor.state }} said:
+        {% if donor.anonymous %} An anonymous donor {% else %} {{ donor.name }} {% endif %} from {{ donor.citystate }} said:
         </p>
         <p>
         <em>{{ donor.text }}</em>

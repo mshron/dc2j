@@ -1,11 +1,11 @@
 from BeautifulSoup import BeautifulSoup
 import re
 
-re_gradelevel = re.compile('Grade Level: ([0-9]+)')
+re_gradelevel = re.compile('Grade Level: (.*)Joined')
 re_teacherjoin = re.compile('Joined: ([^<]+)')
 re_dollas = re.compile('\$([^ ]+)')
 
-def parse_proj_page(url):
+def parse_proj_page(fetcher, url):
     """
     parses the page at the given url and returns a dict with the
     following:
@@ -32,7 +32,7 @@ def parse_proj_page(url):
     """
     project = {}
     
-    page = BeautifulSoup(fetch(url).content)
+    page = BeautifulSoup(fetcher(url))
     project['short_essay'] = page.find('div',id='shortEssay').getText()
     project['long_essay'] = page.find('div',id='longEssay').getText()
     project['url'] = url
@@ -40,18 +40,21 @@ def parse_proj_page(url):
     teacher_posts = page.findAll('div', attrs={'class':'pm  teacher'})
     donor_posts = page.findAll('div', attrs={'class':'pm  '})
     comments = []
-    for post in teacher_posts:
-        comment = {}
-        comment['date'] = post.find('span',attrs={'class':'date'}).getText()
-        comment['is_teacher'] = True
-        comment['name'] = re.sub("the Teacher", "", post.find('span',attrs={'class':'author'}).getText())
-        comment['comment'] = re.sub(r'"', '', post.find("div",attrs={'class':'content '}).getText())
-        comment['citystate'] = re.sub("^from", "", post.find('span',attrs={'class':'cityState'}).getText())
-        comments.append(comment)
+    # teacher posts are commented out for the moment because I don't know how to deal with letters in place of comments
+#    for post in teacher_posts:
+#        comment = {}
+#        comment['date'] = post.find('span',attrs={'class':'date'}).getText()
+#        comment['is_teacher'] = True
+#        comment['name'] = re.sub("the Teacher", "", post.find('span',attrs={'class':'author'}).getText())
+#        comment['comment'] = re.sub(r'"', '', post.find("div",['content', 'letter']).getText())
+#        comment['citystate'] = re.sub("^from", "", post.find('span',attrs={'class':'cityState'}).getText())
+#        comment['anonymous'] = False
+#        comments.append(comment)
     
     for post in donor_posts:
         comment = {}
         comment['name'] = post.find('span',attrs={'class':'author'}).getText()
+        comment['anonymous'] = (comment['name'] == 'A donor')
         if re.search(r"donorschoose\.org", comment['name'], re.IGNORECASE):
             continue
         comment['date'] = post.find('span',attrs={'class':'date'}).getText()
@@ -67,16 +70,16 @@ def parse_proj_page(url):
     
     return project
 
-def add_teacher_data(project):
-    page = BeautifulSoup(fetch(project['teacherURL'] + '?historical=True').content)  
+def add_teacher_data(fetcher, project):
+    page = BeautifulSoup(fetcher(project['teacherURL'] + '?historical=True'))  
     # classroom description
-    about = page.find('h2')[0]
+    about = page.findAll('h2')[0]
     assert ('class', 'leadIn') in about.parent.attrs
     project['aboutClassroom'] = about.text
     # grade level, teacher join date
     teacherInfo = page.findAll('div', attrs={'class': 'teacherDetails'})[0].text
-    project['gradeLevel'] = re_gradelevel(teacherInfo)
-    project['teacherJoinDate'] = re_teacherjoin(teacherInfo)
+    project['gradeLevel'] = re_gradelevel.findall(teacherInfo)[0]
+    project['teacherJoinDate'] = re_teacherjoin.findall(teacherInfo)[0]
     # info on completed projects
     _numProjects = [tag for tag in page.findAll('strong') if tag.parent.name=='td']
     if len(_numProjects) == 0: #no completed projects
@@ -84,22 +87,24 @@ def add_teacher_data(project):
         project['teacherRaisedOnDC'] = 0
         return
     # number of completed projects
-    project['teacherNumProjects'] = _numProject[1].text
+    project['teacherNumProjects'] = _numProjects[1].text
     # total money raised to date
     monies = page.findAll('span', attrs={'class': 'given'})
     each_project = lambda tag: int(re_dollas.findall(tag.text)[0].replace(',',''))
     project['teacherRaisedOnDC'] = sum(map(each_project, monies))
     return
 
-def scrapeDC(url):
-    project = parse_proj_page(url)
-    add_teacher_data(project)
-
-    extras = {}
+def scrapeDC(fetcher, url):
+    project = parse_proj_page(fetcher, url)
+    add_teacher_data(fetcher, project)
+    return project
     
 
 
 if __name__ == "__main__":
+    from urllib2 import urlopen
+    import json
+    fetcher = lambda url: urlopen(url)
     url="http://www.donorschoose.org/donors/proposal.html?id=569177"
-    p=parse_proj_page(url)
+    p=scrapeDC(fetcher, url)
     print json.dumps(p)

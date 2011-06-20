@@ -6,7 +6,7 @@ from google.appengine.ext.webapp import template
 
 import os
 
-from parse_project_page import parse_proj_page, summarize_project
+from parse_project_page import scrapeDC
 
 class Compose(webapp.RequestHandler):
     def compose(p, j, n, extras):
@@ -23,6 +23,13 @@ class Compose(webapp.RequestHandler):
         message.body = "FIXME"
         message.html = html
         message.send()
+        l = Letters()
+        l.html = html
+        l.journalist = j.fullName
+        l.newspaper = n.name
+        l.nurl = n.url
+        l.put()
+
 
     def dbfetch(dcid):
         _p = Proposal.all().filter('dcid =', dcid).fetch(1)
@@ -40,9 +47,8 @@ class Compose(webapp.RequestHandler):
         return jn_list
 
     def getextras(dcid):
-        p = parse_proj_page(DCpublicurl + dcid)            
-        extras = {}
-
+        extras = scrapeDC(DCpublicurl + dcid)            
+        extras.donors = [c for c in extras['comments'] if not c['is_teacher']]
 
     def post(self):
         dcid = self.request.get('dcid')
