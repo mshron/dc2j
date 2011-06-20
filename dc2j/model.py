@@ -14,6 +14,8 @@ import csv
 ## hardcoded constants
 DCapi = "http://api.donorschoose.org/common/json_feed.html?APIKey=73zfti7me2in&"
 
+DCpublicurl = "http://www.donorschoose.org/donors/proposal.html?id="
+
 class Newspaper(db.Model):
     url = db.LinkProperty(required=True)
     nid = db.StringProperty(required=True)

@@ -1,5 +1,9 @@
 from BeautifulSoup import BeautifulSoup
-import json, urllib2, re
+import re
+
+re_gradelevel = re.compile('Grade Level: ([0-9]+)')
+re_teacherjoin = re.compile('Joined: ([^<]+)')
+re_dollas = re.compile('\$([^ ]+)')
 
 def parse_proj_page(url):
     """
@@ -28,7 +32,7 @@ def parse_proj_page(url):
     """
     project = {}
     
-    page = BeautifulSoup(urllib2.urlopen(url).read())
+    page = BeautifulSoup(fetch(url).content)
     project['short_essay'] = page.find('div',id='shortEssay').getText()
     project['long_essay'] = page.find('div',id='longEssay').getText()
     project['url'] = url
@@ -58,8 +62,41 @@ def parse_proj_page(url):
         comments.append(comment)
         
     project['comments'] = comments
+
+    project['teacherURL'] = page.find('a', attrs={'title': 'See this teacher\'s page'}).attrMap['href']
     
     return project
+
+def add_teacher_data(project):
+    page = BeautifulSoup(fetch(project['teacherURL'] + '?historical=True').content)  
+    # classroom description
+    about = page.find('h2')[0]
+    assert ('class', 'leadIn') in about.parent.attrs
+    project['aboutClassroom'] = about.text
+    # grade level, teacher join date
+    teacherInfo = page.findAll('div', attrs={'class': 'teacherDetails'})[0].text
+    project['gradeLevel'] = re_gradelevel(teacherInfo)
+    project['teacherJoinDate'] = re_teacherjoin(teacherInfo)
+    # info on completed projects
+    _numProjects = [tag for tag in page.findAll('strong') if tag.parent.name=='td']
+    if len(_numProjects) == 0: #no completed projects
+        project['teacherNumProjects'] = 0
+        project['teacherRaisedOnDC'] = 0
+        return
+    # number of completed projects
+    project['teacherNumProjects'] = _numProject[1].text
+    # total money raised to date
+    monies = page.findAll('span', attrs={'class': 'given'})
+    each_project = lambda tag: int(re_dollas.findall(tag.text)[0].replace(',',''))
+    project['teacherRaisedOnDC'] = sum(map(each_project, monies))
+    return
+
+def scrapeDC(url):
+    project = parse_proj_page(url)
+    add_teacher_data(project)
+
+    extras = {}
+    
 
 
 if __name__ == "__main__":

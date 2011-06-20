@@ -6,6 +6,8 @@ from google.appengine.ext.webapp import template
 
 import os
 
+from parse_project_page import parse_proj_page, summarize_project
+
 class Compose(webapp.RequestHandler):
     def compose(p, j, n, extras):
         template_values = {'p': p, 'j': j, 'n': n, 'extras': extras}
@@ -37,10 +39,15 @@ class Compose(webapp.RequestHandler):
                     jn_list.append((j,n))
         return jn_list
 
+    def getextras(dcid):
+        p = parse_proj_page(DCpublicurl + dcid)            
+        extras = {}
+
+
     def post(self):
         dcid = self.request.get('dcid')
         p, jn_list, = dbfetch(dcid)
-        extras = getextras(p)
+        extras = getextras(dcid)
         for (j,n) in jn_list:
             subject, html = compose(p, j, n, extras)
             mail(j, subject, html)
