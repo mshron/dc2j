@@ -3,7 +3,6 @@
 import re
 from itertools import groupby
 
-
 def names(name_re, s):
     """Finds place names according to regexp name_re
     >>> r = [re.compile(r'(Los Angeles|New York)')]
