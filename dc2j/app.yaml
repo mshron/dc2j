@@ -4,5 +4,7 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /.*
-  script: composer.py
+- url: /data/.*
+  script: data.py
+- url: /compose/.*
+  script: compose.py
