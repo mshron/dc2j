@@ -1,0 +1,10 @@
+nid, name, url, lat, lng, offsetLat, offsetLng
+0,Chicago Tribune,www.chicagotribune.com,41.8781136,-87.6297982,0.1863971,1.4758396
+1,Moline Daily Dispatch,www.qconline.com,41.5067003,-90.5151342,0.2579146,0.7605712
+2,Peoria Journal Star,www.pjstar.com,40.6936488,-89.5889864,0.9332814,0.91724515
+3,Quincy Herald-Whig,www.whig.com,42.2528772,-71.0022705,0.7127766,0.571125
+4,Shelbyville Daily Union,www.shelbyvilledailyunion.com,35.483406,-86.4602717,0,0
+5,Greensburg Daily News,www.greensburgdailynews.com,40.3014581,-79.5389289,0.68000395,nan
+6,The News-Dispatch,www.michigancityin.com,41.7075394,-86.8950297,0,0
+7,Princeton Daily Clarion,www.pdclarion.com,40.3487181,-74.6590472,0,0
+8,Memphis Daily News,www.memphisdailynews.com,35.1495343,-90.0489801,0.8577598,0.6683403

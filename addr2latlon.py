@@ -8,14 +8,15 @@ def addr2latlon(addr):
         "address": addr,
         "sensor": "false"
     }
-    a = json.loads(
-        urllib.urlopen(
-            domain+path+"?"+urllib.urlencode(query)
-        ).read()
-    )["results"][0]["geometry"]["location"]
+    try:
+        a = json.loads(
+            urllib.urlopen(
+                domain+path+"?"+urllib.urlencode(query)
+            ).read()
+        )["results"][0]["geometry"]["location"]
+    except IndexError:
+        return None
     return a['lat'], a['lng']
 
 if __name__ == "__main__":
-    addr = "1600 Amphitheatre Parkway, Mountain View, CA"
-    print addr2latlon(addr)
-    
+    print addr2latlon("Benton Evening News, IL")
