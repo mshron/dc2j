@@ -33,17 +33,16 @@ for newspaper, state, url in todo:
     except TypeError:
         continue
 
-print urls, locns, papers
-
 logging.info("getting coverage bounding boxes")
 offsets = scrape_articles.run_on(urls, locns)
 
+logging.info("writing output file")
 # write the output file
 out = open('newspaper_info.csv', 'w')
 out.write('nid, name, url, lat, lng, offsetLat, offsetLng\n')
-for paper, url, locn, offset in zip(papers,urls,locns,offsets):
+for i, (paper, url, locn, offset) in enumerate(zip(papers,urls,locns,offsets)):
     out.write(
         "%s,%s,%s,%s,%s,%s,%s\n"
-        %(i, newspaper, url.strip(), locn[0], locn[1], offset[0], offset[1])
+        %(i, paper, url.strip(), locn[0], locn[1], offset[0], offset[1])
     )
 out.close()
