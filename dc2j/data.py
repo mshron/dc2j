@@ -140,8 +140,9 @@ class FindUnmodifiedCron(webapp.RequestHandler):
 #called by cron job that finds week-long unmodified proposals
 class QueryProjectDC(webapp.RequestHandler): 
     def queryURL(self, p):
-        params = {'historical': True,
-                  'solrQuery': 'id:%s'%p.dcid}
+# params = {'historical': True,
+#                  'solrQuery': 'id:%s'%p.dcid}
+        params = {'id': p.dcid}
         url = DCapi + urlencode(params)
         return url
 
@@ -150,7 +151,8 @@ class QueryProjectDC(webapp.RequestHandler):
         data = json.loads(body)
         return data
 
-    def augment(self, p, pro):
+    def augment(self, p, _pro):
+        pro = _pro['proposals'][0]
         p.teacher = pro['teacherName']
         p.fulfillmentTrailer = pro['fulfillmentTrailer']
         #p.shortDescription = pro['shortDescription']
@@ -171,13 +173,13 @@ class QueryProjectDC(webapp.RequestHandler):
         p = _p[0]
         url = self.queryURL(p)
         proposal = self.fetch(url)
-        if proposal['totalProposals'] != 1: #inbetween stage or deleted
+        if proposal['totalProposals'] != '1': #inbetween stage or deleted
             p.accessfails += 1
             p.put()
             self.error(412)
             return
         else:
-            augment(p, proposal)
+            self.augment(p, proposal)
             # this could use a key to save a db call,
             # at the expense of API sloppiness
             t = Task(url="/compose/go", params={'dcid': dcid})

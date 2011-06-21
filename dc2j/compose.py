@@ -9,15 +9,15 @@ import os
 from parse_project_page import scrapeDC
 
 class Compose(webapp.RequestHandler):
-    def compose(p, j, n, extras):
+    def compose(self,p, j, n, extras):
         template_values = {'p': p, 'j': j, 'n': n, 'extras': extras}
         htmlpath = os.path.join(os.path.dirname(__file__), 'email.html')
         html = template.render(htmlpath, template_values)
         subject = "FIXME"
         return subject, html
 
-    def mail(j, subject, html):
-        message = mail.EmailMessage(sender="FIXME <f@ix.me>", 
+    def mail(self, j, n, subject, html):
+        message = mail.EmailMessage(sender="FIXME <max.shron@gmail.com>", 
                                     subject=subject)
         message.to = j.email
         message.body = "FIXME"
@@ -31,7 +31,7 @@ class Compose(webapp.RequestHandler):
         l.put()
 
 
-    def dbfetch(dcid):
+    def dbfetch(self,dcid):
         _p = Proposal.all().filter('dcid =', dcid).fetch(1)
         if len(_p)==0:
             self.error(404)
@@ -39,24 +39,28 @@ class Compose(webapp.RequestHandler):
         p = _p[0]
         jn_list = []
         for n_key in p.newspapers:
-            n = Newspapers.get(n_key)
+            n = Newspaper.get(n_key)
             for j_key in n.journalists:
-                j = Journalists.get(j_key)
+                j = Journalist.get(j_key)
                 if j.threshold != 0: #obvs could be expanded...
                     jn_list.append((j,n))
-        return jn_list
+        return p, jn_list
 
-    def getextras(dcid):
-        extras = scrapeDC(DCpublicurl + dcid)            
-        extras.donors = [c for c in extras['comments'] if not c['is_teacher']]
+    def fetcher(self, url):
+        return fetch(url).content
+
+    def getextras(self,dcid):
+        extras = scrapeDC(self.fetcher, DCpublicurl + dcid)            
+        extras['donors'] = [c for c in extras['comments'] if not c['is_teacher']]
+        return extras
 
     def post(self):
         dcid = self.request.get('dcid')
-        p, jn_list, = dbfetch(dcid)
-        extras = getextras(dcid)
+        p, jn_list = self.dbfetch(dcid)
+        extras = self.getextras(dcid)
         for (j,n) in jn_list:
-            subject, html = compose(p, j, n, extras)
-            mail(j, subject, html)
+            subject, html = self.compose(p, j, n, extras)
+            self.mail(j, n, subject, html)
 
 
 def main():
