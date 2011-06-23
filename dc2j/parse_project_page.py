@@ -46,7 +46,7 @@ def parse_proj_page(fetcher, url):
 #        comment['date'] = post.find('span',attrs={'class':'date'}).getText()
 #        comment['is_teacher'] = True
 #        comment['name'] = re.sub("the Teacher", "", post.find('span',attrs={'class':'author'}).getText())
-#        comment['comment'] = re.sub(r'"', '', post.find("div",['content', 'letter']).getText())
+#        comment['text'] = re.sub(r'"', '', post.find("div",['content', 'letter']).getText())
 #        comment['citystate'] = re.sub("^from", "", post.find('span',attrs={'class':'cityState'}).getText())
 #        comment['anonymous'] = False
 #        comments.append(comment)
@@ -59,7 +59,7 @@ def parse_proj_page(fetcher, url):
             continue
         comment['date'] = post.find('span',attrs={'class':'date'}).getText()
         comment['is_teacher'] = False
-        comment['comment'] = re.sub(r'"', '', post.find("div",attrs={'class':'content '}).getText())
+        comment['text'] = re.sub(r'"', '', post.find("div",attrs={'class':'content '}).getText())
         comment['citystate'] = re.sub("^from", "", post.find('span',attrs={'class':'cityState'}).getText())
         
         comments.append(comment)

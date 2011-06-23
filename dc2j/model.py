@@ -7,12 +7,14 @@ from google.appengine.ext import db
 from django.utils import simplejson as json
 
 from urllib import urlencode
+from urllib2 import urlopen
 from datetime import datetime, timedelta
 from random import randint
 import csv
 
 ## hardcoded constants
-DCapi = "http://api.donorschoose.org/common/json_feed.html?APIKey=73zfti7me2in&"
+#DCapi = "http://api.donorschoose.org/common/json_feed.html?APIKey=73zfti7me2in&"
+DCapi = "http://dl.dropbox.com/u/7481916/dc2j/"
 
 DCpublicurl = "http://www.donorschoose.org/donors/proposal.html?id="
 
@@ -53,8 +55,8 @@ class Proposal(db.Expando):
 #    resource = db.StringProperty()
 
 class Letters(db.Model):
-    html = db.Text()
-    journalist = db.String()
-    newspaper = db.String()
+    html = db.TextProperty()
+    journalist = db.StringProperty()
+    newspaper = db.StringProperty()
     time = db.DateTimeProperty(auto_now=True)
     nurl = db.LinkProperty()
