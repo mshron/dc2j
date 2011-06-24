@@ -1,11 +1,16 @@
 from BeautifulSoup import BeautifulSoup,NavigableString
 import re
 
+states = {'ALABAMA': 'AL', 'ALASKA': 'AK', 'AMERICAN SAMOA': 'AS', 'ARIZONA': 'AZ', 'ARKANSAS': 'AR', 'CALIFORNIA': 'CA', 'COLORADO': 'CO', 'CONNECTICUT': 'CT', 'DELAWARE': 'DE', 'DISTRICT OF COLUMBIA': 'DC', 'FEDERATED STATES OF MICRONESIA': 'FM', 'FLORIDA': 'FL', 'GEORGIA': 'GA', 'GUAM': 'GU', 'HAWAII': 'HI', 'IDAHO': 'ID', 'ILLINOIS': 'IL', 'INDIANA': 'IN', 'IOWA': 'IA', 'KANSAS': 'KS', 'KENTUCKY': 'KY', 'LOUISIANA': 'LA', 'MAINE': 'ME', 'MARSHALL ISLANDS': 'MH', 'MARYLAND': 'MD', 'MASSACHUSETTS': 'MA', 'MICHIGAN': 'MI', 'MINNESOTA': 'MN', 'MISSISSIPPI': 'MS', 'MISSOURI': 'MO', 'MONTANA': 'MT', 'NEBRASKA': 'NE', 'NEVADA': 'NV', 'NEW HAMPSHIRE': 'NH', 'NEW JERSEY': 'NJ', 'NEW MEXICO': 'NM', 'NEW YORK': 'NY', 'NORTH CAROLINA': 'NC', 'NORTH DAKOTA': 'ND', 'NORTHERN MARIANA ISLANDS': 'MP', 'OHIO': 'OH', 'OKLAHOMA': 'OK', 'OREGON': 'OR', 'PALAU': 'PW', 'PENNSYLVANIA': 'PA', 'PUERTO RICO': 'PR', 'RHODE ISLAND': 'RI', 'SOUTH CAROLINA': 'SC', 'SOUTH DAKOTA': 'SD', 'TENNESSEE': 'TN', 'TEXAS': 'TX', 'UTAH': 'UT', 'VERMONT': 'VT', 'VIRGIN ISLANDS': 'VI', 'VIRGINIA': 'VA', 'WASHINGTON': 'WA', 'WEST VIRGINIA': 'WV', 'WISCONSIN': 'WI', 'WYOMING': 'WY'}
+
+
 re_gradelevel = re.compile('Grade Level: (.*)Joined')
 re_teacherjoin = re.compile('Joined: ([^<]+)')
 re_teacherid = re.compile('/we-teach/([0-9]+)')
 re_dollas = re.compile('\$([^ ]+)')
 re_nonprint = re.compile('[\\t\\r\\n\"]')
+re_statenames = re.compile('('+'|'.join(states.keys())+')', re.I)
+re_stateabbrevs = re.compile(', (' + '|'.join(states.values())+')', re.I)
 
 maketext = lambda x: re_nonprint.sub('',' '.join([y for y in x if isinstance(y,NavigableString)]))
 
@@ -41,31 +46,22 @@ def parse_proj_page(fetcher, url):
     project['long_essay'] = page.find('div',id='longEssay').getText()
     project['url'] = url
     
-    teacher_posts = page.findAll('div', attrs={'class':'pm  teacher'})
-    donor_posts = page.findAll('div', attrs={'class':'pm  '})
+    posts = page.findAll('div', 'pm .*')
     comments = []
-    for post in teacher_posts:
+    for post in posts:
         comment = {}
+        comment['name'] = post.find('span',attrs={'class':'author'}).getText()
+        comment['anonymous'] = ('A donor' in comment['name'])
+        comment['is_teacher'] = 'teacher' in post.attrs[0][1]
+        if comment['is_teacher']:
+            comment['name'] = re.sub('the Teacher','',comment['name'])
+        if re.search(r"donorschoose\.org", comment['name'], re.IGNORECASE):
+            continue
         comment['date'] = post.find('span',attrs={'class':'date'}).getText()
-        comment['is_teacher'] = True
-        comment['name'] = re.sub("the Teacher", "", post.find('span',attrs={'class':'author'}).getText())
         c = post.find('div', 'content')
         if c == None:
             c = post.find('div', 'messageBody')
         comment['text'] = maketext(c.contents)
-        comment['citystate'] = re.sub("^from", "", post.find('span',attrs={'class':'cityState'}).getText())
-        comment['anonymous'] = False
-        comments.append(comment)
-    
-    for post in donor_posts:
-        comment = {}
-        comment['name'] = post.find('span',attrs={'class':'author'}).getText()
-        comment['anonymous'] = (comment['name'] == 'A donor')
-        if re.search(r"donorschoose\.org", comment['name'], re.IGNORECASE):
-            continue
-        comment['date'] = post.find('span',attrs={'class':'date'}).getText()
-        comment['is_teacher'] = False
-        comment['text'] = maketext(post.find("div",attrs={'class':'content '}).contents)
         comment['citystate'] = re.sub("^from", "", post.find('span',attrs={'class':'cityState'}).getText())
         
         comments.append(comment)
@@ -101,11 +97,27 @@ def add_teacher_data(fetcher, teacherURL, project):
     project['teacherRaisedOnDC'] = sum(map(each_project, monies))
     return
 
+def tabulate_states(comments):
+    statecounts = {}
+    for comment in comments:
+        if comment['is_teacher']: continue
+        fullname = re_statenames.findall(comment['citystate'])
+        if len(fullname) > 0:
+            abbrev = states[fullname[0].upper()]
+        else:
+            abbrevstr = re_stateabbrevs.findall(comment['citystate'])
+            if len(abbrevstr) > 0:
+                abbrev = abbrevstr[0]
+            else:
+                continue
+        statecounts[abbrev] = statecounts.get(abbrev,0) + 1
+    return statecounts
+
 def scrapeDC(fetcher, url, teacherURL):
     project = parse_proj_page(fetcher, url)
     add_teacher_data(fetcher, teacherURL, project)
+    project['statecounts'] = tabulate_states(project['comments'])
     return project
-    
 
 
 if __name__ == "__main__":
