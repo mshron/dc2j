@@ -30,8 +30,8 @@ class Newspapers(webapp.RequestHandler):
             n.name = data.get('name')
             n.put()
             params = {'nid': nid}
-            t = Task(url='/data/task/polldc', params=params)
-            t.add()
+            #t = Task(url='/data/task/polldc', params=params)
+            #t.add()
 
     def get(self): #doesn't do much at the moment
         nid = self.request.get('nid')
