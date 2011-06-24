@@ -19,9 +19,9 @@ DCpublicurl = "http://www.donorschoose.org/donors/proposal.html?id="
 teacherURL = "http://www.donorschoose.org/we-teach/"
 
 #testing
-DCapi = "http://localhost/"
-DCpublicurl = "http://localhost/"
-teacherURL = "http://localhost/"
+#DCapi = "http://localhost/"
+#DCpublicurl = "http://localhost/"
+#teacherURL = "http://localhost/"
 
 class Newspaper(db.Model):
     url = db.LinkProperty(required=True)

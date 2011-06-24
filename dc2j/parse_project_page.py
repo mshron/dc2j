@@ -5,6 +5,7 @@ re_gradelevel = re.compile('Grade Level: (.*)Joined')
 re_teacherjoin = re.compile('Joined: ([^<]+)')
 re_teacherid = re.compile('/we-teach/([0-9]+)')
 re_dollas = re.compile('\$([^ ]+)')
+re_nonprint = re.compile('[\\t\\r\\n\"]')
 
 maketext = lambda x: re_nonprint.sub('',' '.join([y for y in x if isinstance(y,NavigableString)]))
 
@@ -43,7 +44,6 @@ def parse_proj_page(fetcher, url):
     teacher_posts = page.findAll('div', attrs={'class':'pm  teacher'})
     donor_posts = page.findAll('div', attrs={'class':'pm  '})
     comments = []
-    # teacher posts are commented out for the moment because I don't know how to deal with letters in place of comments
     for post in teacher_posts:
         comment = {}
         comment['date'] = post.find('span',attrs={'class':'date'}).getText()
@@ -111,12 +111,12 @@ def scrapeDC(fetcher, url, teacherURL):
 if __name__ == "__main__":
     from urllib2 import urlopen
     import json
-    #fetcher = lambda url: urlopen(url)
-    fetcher = lambda url: open(url)
-    #url="http://www.donorschoose.org/donors/proposal.html?id=569177"
-    #teacherURL = "http://www.donorschoose.org/we-teach/"
+    fetcher = lambda url: urlopen(url)
+    #fetcher = lambda url: open(url)
+    url="http://www.donorschoose.org/donors/proposal.html?id=569177"
+    teacherURL = "http://www.donorschoose.org/we-teach/"
 
-    url="/home/mshron/Dropbox/Public/dc2j/proposal.html?id=504497"
-    teacherURL="/home/mshron/Dropbox/Public/dc2j/"
+    #url="/home/mshron/Dropbox/Public/dc2j/proposal.html?id=504497"
+    #teacherURL="/home/mshron/Dropbox/Public/dc2j/"
     p=scrapeDC(fetcher, url, teacherURL)
     print json.dumps(p)
