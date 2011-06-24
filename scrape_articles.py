@@ -71,15 +71,15 @@ def nearest(pt, list):
 def coverage(center, points):
     logging.info('finding coverage around %s'%str(center))
     _d = np.abs(np.asarray(center)-np.asarray(points))
-    d_lat = [d for d in _d[:,0] if d < 2]
-    d_lon = [d for d in _d[:,1] if d < 3]
+    d_lat = np.median([d for d in _d[:,0] if d < 2])
+    d_lon = np.median([d for d in _d[:,1] if d < 3])
     
     if np.isnan(d_lat):
         d_lat = 0
     if np.isnan(d_lon):
         d_lon = 0
     
-    return [np.median(d_lat), np.median(d_lon)]
+    return [d_lat, d_lon)]
 
 def dir_walker_callback(arg, dirname, fnames):
     for fname in fnames:
