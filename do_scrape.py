@@ -14,9 +14,10 @@ for i,line in enumerate(fh):
     newspaper, state, url = line.split('\t')
     url = urlparse.urlparse(url).netloc
     todo.append((newspaper, state, url))
-    if not os.path.isdir(url):
-        cmd = "./spider.sh %s"%url
-        os.system(cmd)
+    if False:
+        if not os.path.isdir(url):
+            cmd = "./spider.sh %s"%url
+            os.system(cmd)
 fh.close()
 
 logging.info("getting locations")

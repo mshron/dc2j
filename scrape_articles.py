@@ -79,7 +79,7 @@ def coverage(center, points):
     if np.isnan(d_lon):
         d_lon = 0
     
-    return [d_lat, d_lon)]
+    return (d_lat, d_lon)
 
 def dir_walker_callback(arg, dirname, fnames):
     for fname in fnames:
