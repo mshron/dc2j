@@ -10,3 +10,6 @@ handlers:
   script: data.py
 - url: /compose/.*
   script: compose.py
+- url: /
+  script: index.py
+

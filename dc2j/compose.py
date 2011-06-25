@@ -49,15 +49,63 @@ class Compose(webapp.RequestHandler):
     def fetcher(self, url):
         return fetch(url).content
 
-    def getextras(self,dcid):
+    def cardinal2word(self, n):
+        if n <= 0:
+            return "No"
+        if n == 1:
+            return "One"
+        if n < 21:
+            return ['Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty'][n-2]
+        else:
+            return str(n)
+
+    def ordinal2word(self, n):
+        if n <= 1:
+            return 'first'
+        if n < 21:
+            return ['second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','eleventh','twelfth','thirteenth','fourteenth','fifteenth','sixteenth','seventeenth','eighteenth','ninteenth','twentieth'][n-2] 
+        else:
+            if n%10 == 1:
+                return '%sst'%n
+            elif n%10 == 2:
+                return '%snd'%n
+            elif n%10 == 3:
+                return '%srd'%n
+            else:
+                return '%sth'%n
+
+
+    def addstatedata(self, extras, state):
+        statecounts = extras['statecounts']
+        instate = statecounts[state]
+        outstate = sum(map(int,statecounts.values()))-instate
+        extras['instate'] = instate > 0
+        extras['outofstate'] = outstate > 0
+        extras['numInstateDonorsText'] = self.cardinal2word(instate) + \
+                                (' person' if instate==1 else ' people')
+        extras['numOutstateDonorsText'] = self.cardinal2word(outstate) + \
+                                (' person' if instate==1 else ' people')
+        extras['teacherNumProjectsText'] =  self.ordinal2word(extras['teacherNumProjects']) + \
+                                 ' completed project'
+
+    def interesting(self, comment):
+        if len(comment['text']) < 60:
+            return False
+        if len(comment['text']) > 300:
+            return False
+        return True
+
+    def getextras(self, dcid, p):
         extras = scrapeDC(self.fetcher, DCpublicurl + dcid, teacherURL)            
-        extras['donors'] = [c for c in extras['comments'] if not c['is_teacher']]
+        extras['donors'] = [c for c in extras['comments'] if (not c['is_teacher'] and self.interesting(c))]
+        extras['donorcount'] = len(extras['donors'])
+        self.addstatedata(extras, p.state)
         return extras
 
     def post(self):
         dcid = self.request.get('dcid')
         p, jn_list = self.dbfetch(dcid)
-        extras = self.getextras(dcid)
+        extras = self.getextras(dcid, p)
         for (j,n) in jn_list:
             subject, html = self.compose(p, j, n, extras)
             self.mail(j, n, subject, html)

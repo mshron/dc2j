@@ -11,6 +11,7 @@ re_dollas = re.compile('\$([^ ]+)')
 re_nonprint = re.compile('[\\t\\r\\n\"]')
 re_statenames = re.compile('('+'|'.join(states.keys())+')', re.I)
 re_stateabbrevs = re.compile(', (' + '|'.join(states.values())+')', re.I)
+re_onlyabbrev = re.compile('|'.join(states.values()), re.I)
 
 maketext = lambda x: re_nonprint.sub('',' '.join([y for y in x if isinstance(y,NavigableString)]))
 
@@ -99,6 +100,7 @@ def add_teacher_data(fetcher, teacherURL, project):
 
 def tabulate_states(comments):
     statecounts = {}
+    # apologies to PEP-8
     for comment in comments:
         if comment['is_teacher']: continue
         fullname = re_statenames.findall(comment['citystate'])
@@ -109,7 +111,11 @@ def tabulate_states(comments):
             if len(abbrevstr) > 0:
                 abbrev = abbrevstr[0]
             else:
-                continue
+                abbrevonly = re_onlyabbrev.findall(comment['citystate'])
+                if len(abbrevonly) > 0:
+                    abbrev = abbrevonly[0]
+                else:
+                    continue
         statecounts[abbrev] = statecounts.get(abbrev,0) + 1
     return statecounts
 
