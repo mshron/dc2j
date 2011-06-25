@@ -50,7 +50,7 @@ class Compose(webapp.RequestHandler):
         return fetch(url).content
 
     def getextras(self,dcid):
-        extras = scrapeDC(self.fetcher, DCpublicurl + dcid)            
+        extras = scrapeDC(self.fetcher, DCpublicurl + dcid, teacherURL)            
         extras['donors'] = [c for c in extras['comments'] if not c['is_teacher']]
         return extras
 
