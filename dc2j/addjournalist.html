@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Donors Choose Automated PR Friendsourcing</title>
+        <style type="text/css">
+           #input {width: 700px; margin: auto; margin-bottom: 4em; background: #efefff; padding: 10px; color: #222; margin-top: 2em;}
+          #input fieldset {padding: 10px;}
+          /* Add whatever you need to your CSS reset */
+          html, body, h1, form, fieldset, input {
+           margin: 0;
+           padding: 0;
+           border: none;
+           }
+          body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
+          #site {margin: auto}
+          #add {float: left; }
+          #error {float: left; border-left: 1pt dashed gray;}
+          #about {overflow: auto; width: 100%;}
+
+        </style>
+    </head>
+    <body>
+    <div id="input">
+        <h1>Friendsourcing Journalist Data</h1>
+        <p>Look in the window below and search for the contacts or staff page. The ideal contact is an 'education' editor or journalist, followed by 'lifestyle' or 'local', followed by the general editor, followed by whoever you can find. </p><p>Enter the best fit into the top entry and fill in any other if they are relevant. If there's an error, use the dropdown box below.</p>
+        <form id="add" action="/input/journalists" method="POST">
+            <fieldset>
+                {% for r in range %}
+                <p>
+                    <label for="email-{{ r }}">E-mail</label>
+                    <input id="email-{{ r }}" name="email-{{ r }}" type="email" class="text" value=""/>
+                    <label for="name-{{ r }}">Name</label>
+                    <input id="name-{{ r }}" name="name-{{ r }}" type="text" class="text" value=""/>
+                    <label for="isperson-{{ r }}"> and is it a real person?</label>
+                    <input id="isperson-{{ r }}" name="isperson-{{ r }}" type="checkbox" checked="checked"/>
+                </p>
+                {% endfor %}
+                <input type="hidden" name="nid" id="nid" value="{{ n.nid }}"/>
+                <button id="addjournalists" type="submit">Add journalists</button>
+            </fieldset>
+        </form>
+        <form id="error" action="/input/journalists" method="POST">
+            <fieldset>
+                <p>
+                    <label for="error">Problems?</label>
+                    <input id="error" name="error" type="text" value=""/>
+                </p>
+                <input type="hidden" name="nid" id="nid_err" value="{{ n.nid }}"/>
+                <button id="submiterror" type="submit">Report Error</button>
+            </fieldset>
+        </form>
+        <p id="about">Outlet: <strong>{{ n.name }}</strong>, id#: <strong>{{ n.nid }}</strong></p>
+    </div>
+    <iframe src={{ n.url }} id="site" width="99%" height="450px">
+        <p>WTF, no iframe support? Stop using <pre>lynx</pre>.</p>
+    </iframe>
+    </body>
+</html>

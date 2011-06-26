@@ -1,0 +1,19 @@
+<html>
+    <head>
+    <style type="text/css">
+    div.letter {
+      background: #fafafa;
+      width: 48em;
+      margin-left: 2em;
+    }
+    </style>
+    </head>
+    <body>
+    <h3>Recent emails sent out by the Donors Choose Automated Press Release System</h3>
+    {% for letter in l %}
+    <div class="letter">
+    {{ letter.html }}
+    </div>
+    {% endfor %}
+    </body>
+</html>
