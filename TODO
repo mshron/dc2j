@@ -1,0 +1,7 @@
+- scrape school district (and add number completed to email)
+- figure out what to do with high-density coverage areas
+- write copy for index that includes the states where there is coverage and the % of all newspapers that are covered; point to friendsourcing bit; write a proper robots.txt to avoid having anything but the index page scraped
+- get a proper header and title for the emails
+- prepare a text version of the html email (do this nearly last)
+- write a heuristic for picking the right comments
+- improve the formatting/coloring of sent emails
