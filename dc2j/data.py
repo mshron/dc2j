@@ -156,6 +156,7 @@ class QueryProjectDC(webapp.RequestHandler):
         p.teacher = pro['teacherName']
         p.fulfillmentTrailer = pro['fulfillmentTrailer']
         #p.shortDescription = pro['shortDescription']
+        p.schoolName = pro['schoolName']
         p.schoolLatLat = db.GeoPt(pro['latitude'], pro['longitude'])
         p.money = pro['totalPrice']
         p.city = pro['city']
