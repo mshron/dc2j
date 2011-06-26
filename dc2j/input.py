@@ -19,6 +19,8 @@ class AddJournalists(webapp.RequestHandler):
                 continue
             if len(_n[0].journalists) > 0:
                 continue
+            if (_n[0].error != ""):
+                continue
             n = _n[0]
         if n == None:
             self.error(412) #FIXME
