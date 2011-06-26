@@ -31,6 +31,9 @@ class Newspaper(db.Model):
     nwLatLng = db.GeoPtProperty()
     seLatLng = db.GeoPtProperty()
     name = db.StringProperty()
+    city = db.StringProperty()
+    state = db.StringProperty()
+    error = db.StringProperty()
 
 class Journalist(db.Model):
     jid = db.StringProperty(required=True)

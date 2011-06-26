@@ -17,10 +17,11 @@ class Compose(webapp.RequestHandler):
         return subject, html
 
     def mail(self, j, n, subject, html):
+        #FIXME
         message = mail.EmailMessage(sender="FIXME <max.shron@gmail.com>", 
                                     subject=subject)
-        message.to = j.email
-        message.body = "FIXME"
+        message.to = "max.shron@gmail.com" #j.email
+        message.body = "FIXME" #FIXME
         message.html = html
         message.send()
         l = Letters()

@@ -2,10 +2,9 @@
 
 from model import *
 
-
 class Newspapers(webapp.RequestHandler):
     def put(self):
-        rows = csv.reader(self.request.body_file)
+        rows = csv.reader(self.request.body_file, delimiter='|')
         for i,row in enumerate(rows):
             if i == 0:
                 titles = row
@@ -18,20 +17,32 @@ class Newspapers(webapp.RequestHandler):
             else: n = Newspaper(nid = nid, url = data['url'])
             n.nid = nid
             n.url = data['url']
-            lat = float(data['lat'])
-            lng = float(data['lng'])
-            n.centerLatLng = db.GeoPt(lat,lng)
-            offsetLat = float(data['offsetLat'])
-            offsetLng = float(data['offsetLng'])
-            n.nwLatLng = db.GeoPt(lat+offsetLat, 
-                                  lng-offsetLng)
-            n.seLatLng = db.GeoPt(lat-offsetLat,
-                                  lng+offsetLng)
-            n.name = data.get('name')
+            n.name = data['name']
+            n.city = data['city']
+            n.state = data['state']
+            n.error = data['error']
             n.put()
-            params = {'nid': nid}
-            #t = Task(url='/data/task/polldc', params=params)
-            #t.add()
+
+    def post(self):
+        nid = self.request.get('nid')
+        _n = Newspaper.all().filter('nid =', nid).fetch(1)
+        if _n == None:
+            self.error(404)
+            return
+        n = _n[0]
+        lat = float(self.request.get('lat'))
+        lng = float(self.request.get('lng'))
+        n.centerLatLng = db.GeoPt(lat,lng)
+        offsetLat = float(self.request.get('offsetLat'))
+        offsetLng = float(self.request.get('offsetLng'))
+        n.nwLatLng = db.GeoPt(lat+offsetLat, 
+                              lng-offsetLng)
+        n.seLatLng = db.GeoPt(lat-offsetLat,
+                              lng+offsetLng)
+        n.put()
+        params = {'nid': nid}
+        t = Task(url='/data/task/polldc', params=params)
+        t.add()
 
     def get(self): #doesn't do much at the moment
         nid = self.request.get('nid')
@@ -140,7 +151,7 @@ class FindUnmodifiedCron(webapp.RequestHandler):
 #called by cron job that finds week-long unmodified proposals
 class QueryProjectDC(webapp.RequestHandler): 
     def queryURL(self, p):
-# params = {'historical': True,
+# params = {'historical': True, #FIXME
 #                  'solrQuery': 'id:%s'%p.dcid}
         params = {'id': p.dcid}
         url = DCapi + urlencode(params)
