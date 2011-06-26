@@ -21,7 +21,7 @@
     <body>
     <div id="input">
         <h1>Friendsourcing Journalist Data</h1>
-        <p>Look in the window below and search for the contacts or staff page. The ideal contact is an 'education' editor or journalist, followed by 'lifestyle' or 'local', followed by the general editor, followed by whoever you can find. </p><p>Enter the best fit into the top entry and fill in any other if they are relevant. If there's an error, use the dropdown box below.</p>
+        <p>Look in the window below and search for the contacts or staff page. The ideal contact is an 'education' editor or journalist, followed by 'lifestyle' or 'local', followed by the general editor, followed by whoever you can find. </p><p>Enter the best fit into the top entry and fill in any other if they are relevant. If there's an error, write something in the box below.</p>
         <form id="add" action="/input/journalists" method="POST">
             <fieldset>
                 {% for r in range %}
@@ -48,7 +48,7 @@
                 <button id="submiterror" type="submit">Report Error</button>
             </fieldset>
         </form>
-        <p id="about">Outlet: <strong>{{ n.name }}</strong>, id#: <strong>{{ n.nid }}</strong></p>
+        <p id="about">Outlet: <strong>{{ n.name }}</strong> id#: <strong>{{ n.nid }}</strong> url: <strong>{{ n.url }}</strong></p>
     </div>
     <iframe src={{ n.url }} id="site" width="99%" height="450px">
         <p>WTF, no iframe support? Stop using <pre>lynx</pre>.</p>

@@ -55,6 +55,11 @@ class Newspapers(webapp.RequestHandler):
         n = Newspaper.all().filter('nid =', nid).fetch(10)
         self.response.out.write(str(n))
 
+    def delete(self): #FIXME should be deleted before contest!!
+        ns = Newspaper.all()
+        for n in ns:
+            n.delete()
+
 class Journalists(webapp.RequestHandler):
     def put(self):
         rows = csv.reader(self.request.body_file)
@@ -198,7 +203,7 @@ class QueryProjectDC(webapp.RequestHandler):
             # at the expense of API sloppiness
             t = Task(url="/compose/go", params={'dcid': dcid})
             t.add()
-            
+
 def main():
     application = webapp.WSGIApplication(
             [('/data/newspapers', Newspapers),
