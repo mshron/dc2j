@@ -55,10 +55,10 @@ class Newspapers(webapp.RequestHandler):
         n = Newspaper.all().filter('nid =', nid).fetch(10)
         self.response.out.write(str(n))
 
-    def delete(self): #FIXME should be deleted before contest!!
-        ns = Newspaper.all()
-        for n in ns:
-            n.delete()
+#    def delete(self): 
+#        ns = Newspaper.all()
+#        for n in ns:
+#            n.delete()
 
 class Journalists(webapp.RequestHandler):
     def put(self):

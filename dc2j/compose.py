@@ -96,9 +96,14 @@ class Compose(webapp.RequestHandler):
             return False
         return True
 
+    def trim(self, _donors):
+        return _donors
+
     def getextras(self, dcid, p):
         extras = scrapeDC(self.fetcher, DCpublicurl + dcid, teacherURL)            
-        extras['donors'] = [c for c in extras['comments'] if (not c['is_teacher'] and self.interesting(c))]
+        _donors = [c for c in extras['comments'] if (not c['is_teacher'] and self.interesting(c))]
+
+        extras['donors'] = self.trim(_donors)
         extras['donorcount'] = len(extras['donors'])
         self.addstatedata(extras, p.state)
         return extras
