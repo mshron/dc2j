@@ -1,6 +1,7 @@
 '''Scrapes/maintains dc projects into database. Calls composer when needed.'''
 
 from model import *
+from random import random
 
 class Newspapers(webapp.RequestHandler):
     def put(self):
@@ -21,6 +22,7 @@ class Newspapers(webapp.RequestHandler):
             n.city = data['city']
             n.state = data['state']
             n.error = data['error']
+            n.rndm = random()
             n.put()
 
     def post(self):

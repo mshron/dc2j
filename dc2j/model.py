@@ -34,6 +34,7 @@ class Newspaper(db.Model):
     city = db.StringProperty()
     state = db.StringProperty()
     error = db.StringProperty()
+    rndm = db.FloatProperty()
 
 class Journalist(db.Model):
     jid = db.StringProperty(required=True)
