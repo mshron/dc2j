@@ -21,27 +21,27 @@ for i,line in enumerate(fh):
 fh.close()
 
 logging.info("getting locations")
-urls, locns, papers = [], [], []                                               
-for newspaper, state, url in todo:    
+urls, locns, papers, states = [], [], [], []
+for newspaper, state, url in todo[:1]:    
     try:
-        locn = addr2latlon("%s, %s, Newspaper"%(newspaper, state))
-        if locn:
-            urls.append(url)
-            locns.append(locn)
-            papers.append(newspaper)
+        locn = addr2latlon("%s, %s, Address"%(newspaper, state))
+        urls.append(url)
+        papers.append(newspaper)
+        locns.append(locn)
+        states.append(state)            
     except ValueError:
         continue
     except TypeError:
         continue
 
 logging.info("getting coverage bounding boxes")
-offsets = scrape_articles.run_on(urls, locns)
+centres, offsets = scrape_articles.run_on(urls, locns, states)
 
 logging.info("writing output file")
 # write the output file
 out = open('newspaper_info.csv', 'w')
 out.write('nid, name, url, lat, lng, offsetLat, offsetLng\n')
-for i, (paper, url, locn, offset) in enumerate(zip(papers,urls,locns,offsets)):
+for i, (paper, url, locn, offset) in enumerate(zip(papers,urls,centres,offsets)):
     out.write(
         "%s,%s,%s,%s,%s,%s,%s\n"
         %(i, paper, url.strip(), locn[0], locn[1], offset[0], offset[1])
