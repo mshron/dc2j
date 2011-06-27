@@ -1,10 +1,10 @@
-<p>Attn: {{ j.fullName }}, {{ n.name }}</p>
+<p>Attn: {% if j.isPerson %} {{ j.fullName }},{% endif %} {{ n.name }}</p>
 <p>This email is an automated notification to let you know that a teacher at {{ p.schoolName }} in {{ p.city }} has completed a fundraiser entitled "{{ p.title }}" </p>
 <p>{{ p.teacher }}, the teacher, said that</p>
 <p style="margin-left:2em"><em>{{ p.fulfillmentTrailer }}</em></p>
 <p>To complete this project, the teacher raised ${{ p.money }}.
 {% if extras.instate %} {{ extras.numInstateDonorsText }} from in-state gave money. {% endif %} 
-{% if extras.outofstate %} {{ extras.numOutstateDonorsText }} from out-of-state gave money. {% endif %} This is the teacher's {{ extras.teacherNumProjectsText }} project on <a href="http://www.donorschoose.org">DonorsChoose</a>, a free micro-philanthropy site for front-line public school educators.</p>
+{% if extras.outofstate %} {{ extras.numOutstateDonorsText }} from out-of-state gave money. {% endif %} This is the teacher's {{ extras.teacherNumProjectsText }} on <a href="http://www.donorschoose.org">DonorsChoose</a>, a free micro-philanthropy site for front-line public school educators.</p>
 </p>
 {% for donor in extras.donors %}
     <p>

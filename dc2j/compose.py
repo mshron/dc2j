@@ -17,10 +17,11 @@ class Compose(webapp.RequestHandler):
         return subject, html
 
     def mail(self, j, n, subject, html):
+        #FIXME
         message = mail.EmailMessage(sender="FIXME <max.shron@gmail.com>", 
                                     subject=subject)
-        message.to = j.email
-        message.body = "FIXME"
+        message.to = "max.shron@gmail.com" #j.email
+        message.body = "FIXME" #FIXME
         message.html = html
         message.send()
         l = Letters()
@@ -95,9 +96,15 @@ class Compose(webapp.RequestHandler):
             return False
         return True
 
+    def trim(self, _donors, p):
+        def quality(c):
+           pass 
+        return _donors
+
     def getextras(self, dcid, p):
         extras = scrapeDC(self.fetcher, DCpublicurl + dcid, teacherURL)            
-        extras['donors'] = [c for c in extras['comments'] if (not c['is_teacher'] and self.interesting(c))]
+        _donors = [c for c in extras['comments'] if (not c['is_teacher'] and self.interesting(c))]
+        extras['donors'] = self.trim(_donors, p)
         extras['donorcount'] = len(extras['donors'])
         self.addstatedata(extras, p.state)
         return extras

@@ -1,4 +1,4 @@
-application: dc2j
+application: dc2jpr
 version: 1
 runtime: python
 api_version: 1
@@ -10,6 +10,11 @@ handlers:
   script: data.py
 - url: /compose/.*
   script: compose.py
+- url: /input/.*
+  script: input.py
 - url: /
   script: index.py
 
+builtins:
+- remote_api: on
+- datastore_admin: on
