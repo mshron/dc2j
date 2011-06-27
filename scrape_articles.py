@@ -10,6 +10,7 @@ import sys
 import numpy as np
 import logging
 import os
+from addr2latlon import addr2latlon
 
 def find_article_text(file, min_chars = 200):
     logging.debug('extracting article text for %s'%file.name)
@@ -51,33 +52,45 @@ def coordinates(_names, places):
     logging.info("getting coordinates for the set of extracted places")
     out = []
     flat_names = reduce(lambda x,y: x+y, reduce(lambda x,y: x+y, _names))
-    print flat_names
     names = filter(lambda x: len(x)>0, flat_names)
     for name in names:
         out.append(places[name]) 
     return out
 
-def nearest(pt, list):
+def nearest(pt, points):
     """
     >>> nearest([0,0], [[1,1],[2,2],[3,5]])
     [1, 1]
     """
-    logging.info('calculating nearest point to' + str(pt))
+    logging.debug('calculating nearest point to' + str(pt))
     distance = lambda (lat,lon): abs(pt[0]-lat)+abs(pt[1]-lon)
     d_sort = lambda a,b: int(distance(a)-distance(b))
-    closest = sorted(list, cmp=d_sort)[0]
+    try:
+        closest = sorted(points, cmp=d_sort)[0]
+    except ValueError:
+        print points
+        print pt
+        raise
     return closest
 
-def coverage(center, points):
-    logging.info('finding coverage around %s'%str(center))
-    _d = np.abs(np.asarray(center)-np.asarray(points))
+def coverage(centre, points):
+    points = np.asarray(points)
+    if centre is None:
+        # if the centre hasn't been specified, then let's choose the centre
+        # from the locations mentioned in the paper
+        centre = np.mean(points,0)
+    logging.info('finding coverage around %s'%str(centre))
+    _d = np.abs(np.asarray(centre)-points)
     d_lat = np.median([d for d in _d[:,0] if d < 2])
     d_lon = np.median([d for d in _d[:,1] if d < 3])
     
+    # if we can't find any locations around the mean then let's just choose 
+    # some default coverage area. These are chosen to be small w.r.t. the
+    # corpus
     if np.isnan(d_lat):
-        d_lat = 0
+        d_lat = 0.8
     if np.isnan(d_lon):
-        d_lon = 0
+        d_lon = 0.3
     
     return (d_lat, d_lon)
 
@@ -90,32 +103,34 @@ def get_newspaper_webpages(dir):
     files = []
     assert os.path.isdir(dir), dir
     os.path.walk(dir, dir_walker_callback, files)
-    print files
     return files
 
-def run_on(dirs, pts):
+def run_on(dirs, pts,states):
     places = parse_location_file()
     place_re = placefinder.make_re(places)
-    sys.stderr.write('Created place regexp.\n')
+    logging.info('Created place regexp.')
     
     covs = []
-    for dir, pt in zip(dirs, pts):
+    centres = []
+    for dir, pt, state in zip(dirs, pts, states):
+        if pt is None:
+            pt = addr2latlon(state)
+        centres.append(pt)
         dir = "/Users/mike/Dropbox/Projects/dc2j/"+dir.strip()
         logging.info("getting files for directory: %s"%dir)
         files = get_newspaper_webpages(dir)
         names = get_placenames(files, place_re, 100)
-        try:
-            c = coordinates(names, places)
-            n = lambda l: nearest(pt, l)
-            c_nearest = map(n, c)
+        c = coordinates(names, places)
+        try:            
+            c_nearest = [nearest(pt, ci) for ci in c]
             cov = coverage(pt, c_nearest)
             covs.append(cov)
-        except TypeError:
-            covs.append((0,0))
         except:
-            print names
+            print pt
+            print state
+            print addr2latlon(state)
             raise
-    return covs
+    return centres, covs
 
 def main():
     dirs = [
@@ -137,7 +152,6 @@ def main():
 if __name__ == "__main__":
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     
-    from addr2latlon import addr2latlon
     lat, lng = addr2latlon("%s, %s, Newspaper"%("Moline Daily Dispatch", "IL"))
     covs = run_on(['www.qconline.com'],[(lat,lng)])
     print "-------\n" + str(covs)
