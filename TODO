@@ -6,6 +6,5 @@
 - write a heuristic for picking the right comments
 - implement pixel tracking
 - improve the formatting/coloring of sent emails
-- remove the #FIXME bits in the GAE, including the part that simplified the dropbox lookup
-- figure out the cron timing
+- remove the #FIXME bits in the GAE, including the parts that simplified the dropbox lookup
 - prepare a text version of the html email, modify the API urls in model.py (do these nearly last)
