@@ -10,6 +10,7 @@ from urllib import urlencode
 from urllib2 import urlopen
 from datetime import datetime, timedelta
 from random import randint
+import logging
 import csv
 
 ## hardcoded constants
@@ -46,7 +47,6 @@ class Journalist(db.Model):
 class Proposal(db.Expando):
     title = db.StringProperty(required=True)
     dcid = db.StringProperty(required=True)
-    url = db.LinkProperty(required=True)
     accessfails = db.IntegerProperty()
     status = db.StringProperty()
     time = db.DateTimeProperty(auto_now=True)

@@ -89,14 +89,16 @@ class Journalists(webapp.RequestHandler):
             n.put()
 
 
-# called to insert DC data into the db
 class PollDC(webapp.RequestHandler):
+    '''Query the long form list of proposals in the coverage area of a single media outlet.
+
+Those which are new are added; those which are existing are marked as touched. FindUnmodifiedCron will check for old unmodified proposals periodically.'''
     def requestURL(self, n):
         params = {'nwLat': n.nwLatLng.lat,
                   'nwLng': n.nwLatLng.lon,
                   'seLat': n.seLatLng.lat,
                   'seLng': n.seLatLng.lon,
-                  'max': 50}
+                  'concise': 'true'}
         url = DCapi + urlencode(params)
         return url
         
@@ -105,12 +107,10 @@ class PollDC(webapp.RequestHandler):
         data = json.loads(body)
         return data
 
-    # status is always updated, no matter whether it is changed or not;
+    # project is always put, no matter whether it is changed or not;
     # thus, the timestamp is always up to date
-    def update(self, _p, pro, n): #TODO these two are untested
+    def update(self, _p, pro, n): #TODO better tests
         p = _p[0]
-        status = pro['fundingStatus']
-        p.status = status
         k = n.key()
         if k not in p.newspapers:
             p.newspapers.append(k)
@@ -119,24 +119,28 @@ class PollDC(webapp.RequestHandler):
     def insert(self, pro, n):
         p = Proposal(dcid = pro['id'],
                      title = pro['title'],
-                     url = pro['proposalURL'],
-                     status = pro['fundingStatus'],
                      accessfails = 0)
         p.newspapers.append(n.key())
         p.put()
         
     def post(self):
-        newspaper = self.request.get('nid')
-        _n = Newspaper.all().filter('nid =', newspaper).fetch(1)
+        nid = self.request.get('nid')
+        _n = Newspaper.all().filter('nid =', nid).fetch(1)
         if len(_n)==0:
             self.error(404)
             return
         n = _n[0]
         url = self.requestURL(n)
+        if self.request.get('url')=='true':
+            self.response.out.write(url)
+            return
         data = self.fetch(url)
         if len(data)==0:
             self.error(412)
-        # TODO check for >50 replies; should we chuck it, too noisy?
+        # too many open proposals; likely to be busy. hueristic saying leave it be.
+        if int(data['totalProposals']) > 200:
+            logging.info('%s has too many proposals in its area.',nid)
+            return
         for proposal in data['proposals']:
             dcid = proposal['id']
             _p = Proposal.all().filter('dcid =', dcid).fetch(1)
@@ -144,6 +148,7 @@ class PollDC(webapp.RequestHandler):
             else: self.update(_p, proposal, n)
 
 class FindUnmodifiedCron(webapp.RequestHandler):
+    '''Look for projects that have not been modified in over a week; likely they are completed or deleted.'''
     def get(self):
         now = datetime.now()
         then = now - timedelta(60*24*7) # 1 week ago
@@ -155,8 +160,8 @@ class FindUnmodifiedCron(webapp.RequestHandler):
             t = Task(url='/data/task/querydc', params=params)
             t.add()
 
-#called by cron job that finds week-long unmodified proposals
 class QueryProjectDC(webapp.RequestHandler): 
+    '''Called by FindUnmodifiedCron when there is an unmodified proposal.'''
     def queryURL(self, p):
 # params = {'historical': True, #FIXME
 #                  'solrQuery': 'id:%s'%p.dcid}
@@ -210,7 +215,7 @@ def main():
             ('/data/journalists', Journalists),
             ('/data/task/polldc', PollDC),
             ('/data/task/querydc', QueryProjectDC),
-            ('/data/cron/unmodified', FindUnmodifiedCron)],
+            ('/data/task/unmodified', FindUnmodifiedCron)],
                             debug=True)
     run_wsgi_app(application)
             
