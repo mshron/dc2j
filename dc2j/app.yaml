@@ -12,6 +12,8 @@ handlers:
   script: compose.py
 - url: /input/.*
   script: input.py
+- url: /dc/.*
+  script: track.py
 - url: /
   script: index.py
 

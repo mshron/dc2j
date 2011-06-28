@@ -11,7 +11,7 @@ from parse_project_page import scrapeDC
 class Compose(webapp.RequestHandler):
     def compose(self,p, j, n, extras):
         urlparams = {'jid': j.jid, 'dcid': p.dcid}
-        url = 'http://localhost:8081/dc/project' +\
+        url = 'http://localhost:8081/dc/project?' +\
                               urlencode(urlparams)
         template_values = {'p': p, 'j': j, 'n': n, 
                             'extras': extras,
@@ -121,7 +121,7 @@ class Compose(webapp.RequestHandler):
         for (j,n) in jn_list:
             subject, html,url = self.compose(p, j, n, extras)
             self.mail(j, n, subject, html, url)
-            j.actions.append('S:%s',dcid)
+            j.actions.append('S:%s'%dcid)
             j.put()
 
 
