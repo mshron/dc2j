@@ -99,6 +99,7 @@ def add_teacher_data(fetcher, teacherURL, project):
     return
 
 def tabulate_states(comments):
+    # stateful! modified each comment to include a state as well as building statecounts
     statecounts = {}
     # apologies to PEP-8
     for comment in comments:
@@ -106,15 +107,19 @@ def tabulate_states(comments):
         fullname = re_statenames.findall(comment['citystate'])
         if len(fullname) > 0:
             abbrev = states[fullname[0].upper()]
+            comment['state'] = abbrev
         else:
             abbrevstr = re_stateabbrevs.findall(comment['citystate'])
             if len(abbrevstr) > 0:
                 abbrev = abbrevstr[0]
+                comment['state'] = abbrev
             else:
                 abbrevonly = re_onlyabbrev.findall(comment['citystate'])
                 if len(abbrevonly) > 0:
                     abbrev = abbrevonly[0]
+                    comment['state'] = abbrev
                 else:
+                    comment['state'] = None
                     continue
         statecounts[abbrev] = statecounts.get(abbrev,0) + 1
     return statecounts
