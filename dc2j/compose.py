@@ -97,18 +97,24 @@ class Compose(webapp.RequestHandler):
         return True
 
     def trim(self, _donors, p):
-        def quality(comment):
-            if "strong believer" in comment['text']:
-                logging.info("strong believer!")
-                return 0
+        diversity_flag = False
+        quality = []
+        for comment in _donors:
             q = comment['text'].count('.')
             if comment['citystate']:
                 q += 1
             if comment['state']:
                 q += 1
-            return q
-        q = [quality(c) for c in _donors]
-        idx = sorted(range(len(q)), key=q.__getitem__, reverse=True)
+            if comment['state'] == p.state:
+                if diversity_flag is False:
+                    q += 1
+                    diversity_flag = True
+                    logging.info('commenting diversity satisfied!')
+            if "strong believer" in comment['text']:
+                q = 0
+            quality.append(q)
+        logging.info(quality)
+        idx = sorted(range(len(quality)), key=quality.__getitem__, reverse=True)
         return [_donors[i] for i in idx][:3]
 
     def getextras(self, dcid, p):
