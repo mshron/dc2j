@@ -131,7 +131,7 @@ Those which are new are added; those which are existing are marked as touched. F
             return
         n = _n[0]
         params = {'nid': nid}
-        t = Task.url('/data/task/polldc', 
+        t = Task(url='/data/task/polldc', 
                                 params=params,
                                 countdown=60*60*24)
         t.add()
