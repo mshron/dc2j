@@ -1,0 +1,4 @@
+cron:
+    - descrption: find newly completed projects
+      url: /data/task/unmodified
+      schedule: every 24 hours 
