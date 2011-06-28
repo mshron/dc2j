@@ -1,15 +1,18 @@
 INFRASTRUCTURE
 - figure out what to do with high-density coverage areas
-- cron schedule: maybe putting in the lat/lons should kick off a PollDC now and then every 3 days?
+X cron schedule: maybe putting in the lat/lons should kick off a PollDC now and then every 3 days?
+- check for most recent letter?
 
 INTERFACE
 - write copy for index that includes the states where there is coverage and the % of all newspapers that are covered; point to friendsourcing bit; write a proper robots.txt to avoid having anything but the index page scraped
 - get a proper header and title for the emails
 - improve the formatting/coloring of sent emails
 - prepare a text version of the html email, modify the API urls in model.py (do these nearly last)
+- set most urls to admin only
 
 LOGIC
 - scrape school district (and add number completed to email)
 X write a heuristic for picking the right comments
 X implement pixel tracking
 - remove the #FIXME bits in the GAE, including the parts that simplified the dropbox lookup
+- unsubscribe result page improvements

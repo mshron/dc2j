@@ -133,7 +133,7 @@ Those which are new are added; those which are existing are marked as touched. F
         params = {'nid': nid}
         t = Task.url('/data/task/polldc', 
                                 params=params,
-                                countdown=60*60*24*3}
+                                countdown=60*60*24)
         t.add()
         url = self.requestURL(n)
         if self.request.get('url')=='true':
