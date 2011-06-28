@@ -55,12 +55,23 @@ class AddJournalists(webapp.RequestHandler):
                 n.put()
 
         self.redirect('/input/journalists')
-        
-        
 
+class Unsubscribe(webapp.RequestHandler):
+    def get(self):
+        jid = self.request.get('jid')
+        j = Journalist.all().filter('jid =',jid).get()
+        if j == None:
+            self.error(404)
+            return
+        j.threshold = 0.0
+        j.actions.append('KIA')
+        j.put()
+        self.redirect('/static/noemail.html')
+        
 def main():
     application = webapp.WSGIApplication(
-        [('/input/journalists', AddJournalists)],
+        [('/input/journalists', AddJournalists),
+         ('/input/unsubscribe', Unsubscribe)],
             debug=True)
     run_wsgi_app(application)
 

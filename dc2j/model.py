@@ -43,6 +43,8 @@ class Journalist(db.Model):
     threshold = db.FloatProperty()
     isPerson = db.BooleanProperty()
     fullName = db.StringProperty()
+    actions = db.ListProperty(str)
+
 
 class Proposal(db.Expando):
     title = db.StringProperty(required=True)

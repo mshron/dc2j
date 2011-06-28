@@ -130,6 +130,11 @@ Those which are new are added; those which are existing are marked as touched. F
             self.error(404)
             return
         n = _n[0]
+        params = {'nid': nid}
+        t = Task.url('/data/task/polldc', 
+                                params=params,
+                                countdown=60*60*24)
+        t.add()
         url = self.requestURL(n)
         if self.request.get('url')=='true':
             self.response.out.write(url)
@@ -146,6 +151,7 @@ Those which are new are added; those which are existing are marked as touched. F
             _p = Proposal.all().filter('dcid =', dcid).fetch(1)
             if len(_p) == 0: self.insert(proposal, n)
             else: self.update(_p, proposal, n)
+
 
 class FindUnmodifiedCron(webapp.RequestHandler):
     '''Look for projects that have not been modified in over a week; likely they are completed or deleted.'''
