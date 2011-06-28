@@ -10,13 +10,18 @@ from parse_project_page import scrapeDC
 
 class Compose(webapp.RequestHandler):
     def compose(self,p, j, n, extras):
-        template_values = {'p': p, 'j': j, 'n': n, 'extras': extras}
+        urlparams = {'jid': j.jid, 'dcid': p.dcid}
+        url = 'http://localhost:8081/dc/project' +\
+                              urlencode(urlparams)
+        template_values = {'p': p, 'j': j, 'n': n, 
+                            'extras': extras,
+                            'url': url}
         htmlpath = os.path.join(os.path.dirname(__file__), 'email.html')
         html = template.render(htmlpath, template_values)
         subject = "FIXME"
-        return subject, html
+        return subject, html, url
 
-    def mail(self, j, n, subject, html):
+    def mail(self, j, n, subject, html, url):
         #FIXME
         message = mail.EmailMessage(sender="FIXME <max.shron@gmail.com>", 
                                     subject=subject)
@@ -28,7 +33,7 @@ class Compose(webapp.RequestHandler):
         l.html = html
         l.journalist = j.fullName
         l.newspaper = n.name
-        l.nurl = n.url
+        l.nurl = url
         l.put()
 
 
@@ -114,8 +119,10 @@ class Compose(webapp.RequestHandler):
         p, jn_list = self.dbfetch(dcid)
         extras = self.getextras(dcid, p)
         for (j,n) in jn_list:
-            subject, html = self.compose(p, j, n, extras)
-            self.mail(j, n, subject, html)
+            subject, html,url = self.compose(p, j, n, extras)
+            self.mail(j, n, subject, html, url)
+            j.actions.append('S:%s',dcid)
+            j.put()
 
 
 def main():
