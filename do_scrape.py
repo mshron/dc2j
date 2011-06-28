@@ -22,9 +22,12 @@ fh.close()
 
 logging.info("getting locations")
 urls, locns, papers, states = [], [], [], []
-for newspaper, state, url in todo[:1]:    
+for newspaper, state, url in todo[:1]:
     try:
         locn = addr2latlon("%s, %s, Address"%(newspaper, state))
+        if locn is None:
+            locn = addr2latlon(state)
+        assert locn is not None, locn
         urls.append(url)
         papers.append(newspaper)
         locns.append(locn)

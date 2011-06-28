@@ -98,6 +98,22 @@ def add_teacher_data(fetcher, teacherURL, project):
     project['teacherRaisedOnDC'] = sum(map(each_project, monies))
     return
 
+def add_district_data(fetcher, project):
+    page = BeautifulSoup(fetcher(project['url']))
+    h5s = page.findAll('h5')
+    i = ["District:" in h for h in h5s].index(True)
+    district = h5s[i].findNext('a')
+    district_url = district.get('href')
+    district_str = district.contents
+    project['district'] = district_str[0]
+    project['district_url'] = district_url
+    page = BeautifulSoup(fetcher(project['district_url']))
+    tds = page.findAll('td')
+    i = [("Projects1-" in h.text) and (len(h.contents)==4) for h in tds].index(True)
+    num_proj = int(tds[i].findChildren('strong')[1].text)
+    project['num_proj_in_district'] = num_proj
+
+
 def tabulate_states(comments):
     # stateful! modified each comment to include a state as well as building statecounts
     statecounts = {}
@@ -127,6 +143,7 @@ def tabulate_states(comments):
 def scrapeDC(fetcher, url, teacherURL):
     project = parse_proj_page(fetcher, url)
     add_teacher_data(fetcher, teacherURL, project)
+    add_district_data(fetcher, project)
     project['statecounts'] = tabulate_states(project['comments'])
     return project
 

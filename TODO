@@ -10,6 +10,5 @@ INTERFACE
 
 LOGIC
 - scrape school district (and add number completed to email)
-- write a heuristic for picking the right comments
 - implement pixel tracking
 - remove the #FIXME bits in the GAE, including the parts that simplified the dropbox lookup
