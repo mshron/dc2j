@@ -3,7 +3,7 @@
 from model import *
 from google.appengine.api import mail
 from google.appengine.ext.webapp import template
-
+import logging
 import os
 
 from parse_project_page import scrapeDC
@@ -97,9 +97,19 @@ class Compose(webapp.RequestHandler):
         return True
 
     def trim(self, _donors, p):
-        def quality(c):
-           pass 
-        return _donors
+        def quality(comment):
+            if "strong believer" in comment['text']:
+                logging.info("strong believer!")
+                return 0
+            q = comment['text'].count('.')
+            if comment['citystate']:
+                q += 1
+            if comment['state']:
+                q += 1
+            return q
+        q = [quality(c) for c in _donors]
+        idx = sorted(range(len(q)), key=q.__getitem__, reverse=True)
+        return [_donors[i] for i in idx][:3]
 
     def getextras(self, dcid, p):
         extras = scrapeDC(self.fetcher, DCpublicurl + dcid, teacherURL)            
