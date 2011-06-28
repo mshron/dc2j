@@ -16,6 +16,9 @@ handlers:
   script: track.py
 - url: /
   script: index.py
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
 
 builtins:
 - remote_api: on

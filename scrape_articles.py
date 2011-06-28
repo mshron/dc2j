@@ -113,8 +113,6 @@ def run_on(dirs, pts,states):
     covs = []
     centres = []
     for dir, pt, state in zip(dirs, pts, states):
-        if pt is None:
-            pt = addr2latlon(state)
         centres.append(pt)
         dir = "/Users/mike/Dropbox/Projects/dc2j/"+dir.strip()
         logging.info("getting files for directory: %s"%dir)
