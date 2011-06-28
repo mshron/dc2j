@@ -49,7 +49,7 @@ class Compose(webapp.RequestHandler):
             n = Newspaper.get(n_key)
             for j_key in n.journalists:
                 j = Journalist.get(j_key)
-                if j.threshold != 0: #obvs could be expanded...
+                if j.threshold != 0.0: #obvs could be expanded...
                     jn_list.append((j,n))
         return p, jn_list
 
