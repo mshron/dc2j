@@ -5,6 +5,7 @@ from google.appengine.api import mail
 from google.appengine.ext.webapp import template
 import logging
 import os
+import re
 
 from parse_project_page import scrapeDC
 
@@ -30,7 +31,7 @@ class Compose(webapp.RequestHandler):
         message.html = html
         message.send()
         l = Letters()
-        l.html = html
+        l.html = re.sub('&action=i','',html)
         l.journalist = j.fullName
         l.newspaper = n.name
         l.nurl = url
