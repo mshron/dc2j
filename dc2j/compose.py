@@ -33,7 +33,7 @@ class Compose(webapp.RequestHandler):
         message.send()
         l = Letters()
         l.html = re.sub('&action=i','',html)
-        l.html = re.sub('\?jid=[^"]+','',html)
+        l.html = re.sub('\?jid=[^"]+','/',html)
         l.journalist = j.fullName
         l.newspaper = n.name
         l.nurl = url
