@@ -169,7 +169,7 @@ class FindUnmodifiedCron(webapp.RequestHandler):
 class QueryProjectDC(webapp.RequestHandler): 
     '''Called by FindUnmodifiedCron when there is an unmodified proposal.'''
     def queryURL(self, p):
-        params = {'historical': True, #FIXME
+        params = {'historical': True, 
                   'solrQuery': 'id:%s'%p.dcid}
 #        params = {'id': p.dcid}
         url = DCapi + urlencode(params)

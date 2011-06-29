@@ -19,19 +19,21 @@ class Compose(webapp.RequestHandler):
                             'url': url}
         htmlpath = os.path.join(os.path.dirname(__file__), 'email.html')
         html = template.render(htmlpath, template_values)
-        subject = "FIXME"
-        return subject, html, url
+        textpath = os.path.join(os.path.dirname(__file__), 'email.txt')
+        plaintext = template.render(textpath, template_values)
+        subject = "Micro-philanthropy at work at %s"%(p.schoolName)
+        return subject, html, plaintext, url
 
-    def mail(self, j, n, subject, html, url):
-        #FIXME
-        message = mail.EmailMessage(sender="FIXME <max.shron@gmail.com>", 
+    def mail(self, j, n, subject, html, plaintext, url):
+        message = mail.EmailMessage(sender="DC2J <dc2j@dc2jpr.appspot.com>", 
                                     subject=subject)
         message.to = "max.shron@gmail.com" #j.email
-        message.body = "FIXME" #FIXME
+        message.body = plaintext
         message.html = html
         message.send()
         l = Letters()
         l.html = re.sub('&action=i','',html)
+        l.html = re.sub('?jid=[^"]','"',html)
         l.journalist = j.fullName
         l.newspaper = n.name
         l.nurl = url
@@ -87,7 +89,7 @@ class Compose(webapp.RequestHandler):
         instate = statecounts[state]
         extras['ins'] = instate
         outstate = sum(map(int,statecounts.values()))-instate
-        extras['outs'] = oustate
+        extras['outs'] = outstate
         extras['instate'] = instate > 0
         extras['outofstate'] = outstate > 0
         extras['numInstateDonorsText'] = self.cardinal2word(instate) + \
@@ -127,11 +129,14 @@ class Compose(webapp.RequestHandler):
     def getextras(self, dcid, p):
         extras = scrapeDC(self.fetcher, DCpublicurl + dcid, teacherURL)            
         _donors = [c for c in extras['comments'] if (not c['is_teacher'] and self.interesting(c))]
+        self.addstatedata(extras, p.state)
         extras['donors'] = self.trim(_donors, p)
         extras['donorcount'] = len(extras['donors'])
         extras['numProjectsDistrictText'] = self.ordinal2word(extras['num_proj_in_district'])
-        extras['numdonors'] = self.cardinal2word(extras['ins']+extras['outs'])
-        self.addstatedata(extras, p.state)
+        extras['numdonors'] = extras['ins']-extras['outs']
+        extras['numdonorsText'] = self.cardinal2word(extras['numdonors'])
+        extras['numdonors-2'] = extras['numdonors']-2
+        extras['numdonors-2Text'] = self.cardinal2word(extras['numdonors-2'])
         return extras
 
     def post(self):
@@ -139,8 +144,8 @@ class Compose(webapp.RequestHandler):
         p, jn_list = self.dbfetch(dcid)
         extras = self.getextras(dcid, p)
         for (j,n) in jn_list:
-            subject, html,url = self.compose(p, j, n, extras)
-            self.mail(j, n, subject, html, url)
+            subject, html, plaintext, url = self.compose(p, j, n, extras)
+            self.mail(j, n, subject, html, plaintext, url)
             j.actions.append('S:%s'%dcid)
             j.put()
 
