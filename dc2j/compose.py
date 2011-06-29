@@ -25,7 +25,7 @@ class Compose(webapp.RequestHandler):
         return subject, html, plaintext, url
 
     def mail(self, j, n, subject, html, plaintext, url):
-        message = mail.EmailMessage(sender="DC2J <dc2j@dc2jpr.appspot.com>", 
+        message = mail.EmailMessage(sender="DC2J <max.shron@gmail.com>", 
                                     subject=subject)
         message.to = "max.shron@gmail.com" #j.email
         message.body = plaintext
@@ -33,7 +33,7 @@ class Compose(webapp.RequestHandler):
         message.send()
         l = Letters()
         l.html = re.sub('&action=i','',html)
-        l.html = re.sub('?jid=[^"]','"',html)
+        l.html = re.sub('\?jid=[^"]+','',html)
         l.journalist = j.fullName
         l.newspaper = n.name
         l.nurl = url
