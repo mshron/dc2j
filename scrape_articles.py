@@ -16,7 +16,8 @@ def find_article_text(file, min_chars = 200):
     logging.debug('extracting article text for %s'%file.name)
     soup = BeautifulSoup(''.join(file.read()))
     paragraphs = soup.findAll('p')
-    return ' '.join([p.text for p in paragraphs if len(p.text)>min_chars])
+    out = ' '.join([p.text for p in paragraphs if len(p.text)>min_chars])
+    return out
 
 def get_placenames(files, place_re, max_files=100):
     out = []
@@ -51,6 +52,8 @@ def parse_location_file(filename="places_manymore_locations.psv"):
 def coordinates(_names, places):
     logging.info("getting coordinates for the set of extracted places")
     out = []
+    print _names
+    assert len(_names)
     flat_names = reduce(lambda x,y: x+y, reduce(lambda x,y: x+y, _names))
     names = filter(lambda x: len(x)>0, flat_names)
     for name in names:
@@ -81,8 +84,8 @@ def coverage(centre, points):
         centre = np.mean(points,0)
     logging.info('finding coverage around %s'%str(centre))
     _d = np.abs(np.asarray(centre)-points)
-    d_lat = np.median([d for d in _d[:,0] if d < 2])
-    d_lon = np.median([d for d in _d[:,1] if d < 3])
+    d_lat = np.median([d for d in _d[:,0] if d < 0.5])
+    d_lon = np.median([d for d in _d[:,1] if d < 0.5])
     
     # if we can't find any locations around the mean then let's just choose 
     # some default coverage area. These are chosen to be small w.r.t. the
@@ -117,7 +120,14 @@ def run_on(dirs, pts,states):
         dir = "/Users/mike/Dropbox/Projects/dc2j/"+dir.strip()
         logging.info("getting files for directory: %s"%dir)
         files = get_newspaper_webpages(dir)
+        logging.info("getting placenames for directory: %s"%dir)
         names = get_placenames(files, place_re, 100)
+        logging.info("found %s placenames in directory: %s"%(len(names),dir))
+        if len(names) == 1:
+            logging.warn("found no placenames in %s"%dir)
+            # TODO make a better default here!
+            covs.append((0,0))
+            continue
         c = coordinates(names, places)
         try:            
             c_nearest = [nearest(pt, ci) for ci in c]

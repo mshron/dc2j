@@ -1,18 +1,23 @@
 import urllib
 import json
+import csv
 
-fh = open('gazetter.txt')
+fh = open('citieslatlon.csv')
+reader = csv.reader(fh)
 place_dict = dict()
-for line in fh:
-    state, city, lat, lon = line.split(',')
-    city = ''.join(city.split(' ')[:-1])
-    place_dict[(state,city)] = (lat,lon)
+for row in reader:
+    state, city, lat, lon = row
+    city = ' '.join(city.split(' ')[:-1]).strip()
+    place_dict[(state,city)] = (float(lat),float(lon))
 
 def addr2latlon(state,city):
     
     try:
         return place_dict[(state,city)]
     except KeyError:
+        #logging.warn("using google (OMG)")
+        print (state,city)
+        print "using google OMG"
         pass
     
     domain = "http://maps.googleapis.com"
@@ -37,4 +42,4 @@ def addr2latlon(state,city):
     return a['lat'], a['lng']
 
 if __name__ == "__main__":
-    print addr2latlon("IL")
+    print addr2latlon('OR', 'Culver')
