@@ -19,15 +19,16 @@ class Compose(webapp.RequestHandler):
                             'url': url}
         htmlpath = os.path.join(os.path.dirname(__file__), 'email.html')
         html = template.render(htmlpath, template_values)
-        subject = "FIXME"
-        return subject, html, url
+        textpath = os.path.join(os.path.dirname(__file__), 'email.txt')
+        plaintext = template.render(textpath, template_values)
+        subject = "Micro-philanthropy at work at %s"%(p.schoolName)
+        return subject, html, plaintext, url
 
-    def mail(self, j, n, subject, html, url):
-        #FIXME
-        message = mail.EmailMessage(sender="FIXME <max.shron@gmail.com>", 
+    def mail(self, j, n, subject, html, plaintext, url):
+        message = mail.EmailMessage(sender="DC2J <dc2j@dc2jpr.appspot.com>", 
                                     subject=subject)
         message.to = "max.shron@gmail.com" #j.email
-        message.body = "FIXME" #FIXME
+        message.body = plaintext
         message.html = html
         message.send()
         l = Letters()
@@ -88,7 +89,7 @@ class Compose(webapp.RequestHandler):
         instate = statecounts[state]
         extras['ins'] = instate
         outstate = sum(map(int,statecounts.values()))-instate
-        extras['outs'] = oustate
+        extras['outs'] = outstate
         extras['instate'] = instate > 0
         extras['outofstate'] = outstate > 0
         extras['numInstateDonorsText'] = self.cardinal2word(instate) + \
@@ -143,8 +144,8 @@ class Compose(webapp.RequestHandler):
         p, jn_list = self.dbfetch(dcid)
         extras = self.getextras(dcid, p)
         for (j,n) in jn_list:
-            subject, html,url = self.compose(p, j, n, extras)
-            self.mail(j, n, subject, html, url)
+            subject, html, plaintext, url = self.compose(p, j, n, extras)
+            self.mail(j, n, subject, html, plaintext, url)
             j.actions.append('S:%s'%dcid)
             j.put()
 
