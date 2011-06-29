@@ -29,7 +29,7 @@
     	text-transform: uppercase;
     	color: #666666;
         margin-top: 10px;
-    	letter-spacing: 0.3em;
+    	letter-spacing: 0.2em;
     }
     h3{
         margin-left:1em;
@@ -49,11 +49,11 @@
     </head>
     <body>
     <div id="header">
-    <h1>DC2J : The Donors Choose Automatic Press Release System</h1>
+    <h1>DC2J : <br/> The Donors Choose Automatic Press Release System</h1>
     </div>
     
     <div id="email">
-        <h3>Recent emails</h3>
+        <h3>Recent emails sent out by dc2j</h3>
     {% for letter in l %}
     {{ letter.html }}
     {% endfor %}
