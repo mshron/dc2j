@@ -59,13 +59,14 @@ class AddJournalists(webapp.RequestHandler):
 class Unsubscribe(webapp.RequestHandler):
     def get(self):
         jid = self.request.get('jid')
-        j = Journalist.all().filter('jid =',jid).get()
-        if j == None:
-            self.error(404)
-            return
-        j.threshold = 0.0
-        j.actions.append('KIA')
-        j.put()
+        if jid != None:
+            j = Journalist.all().filter('jid =',jid).get()
+            if j == None:
+                self.error(404)
+                return
+            j.threshold = 0.0
+            j.actions.append('KIA')
+            j.put()
         self.redirect('/static/noemail.html')
         
 def main():
