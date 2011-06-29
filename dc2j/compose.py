@@ -12,7 +12,7 @@ from parse_project_page import scrapeDC
 class Compose(webapp.RequestHandler):
     def compose(self,p, j, n, extras):
         urlparams = {'jid': j.jid, 'dcid': p.dcid}
-        url = 'http://dc2jpr.appspot.com:8081/dc/project?' +\
+        url = 'http://dc2jpr.appspot.com/dc/project?' +\
                               urlencode(urlparams)
         template_values = {'p': p, 'j': j, 'n': n, 
                             'extras': extras,
