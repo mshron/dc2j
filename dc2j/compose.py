@@ -32,6 +32,7 @@ class Compose(webapp.RequestHandler):
         message.send()
         l = Letters()
         l.html = re.sub('&action=i','',html)
+        l.html = re.sub('?jid=[^"]','"',html)
         l.journalist = j.fullName
         l.newspaper = n.name
         l.nurl = url
@@ -127,11 +128,14 @@ class Compose(webapp.RequestHandler):
     def getextras(self, dcid, p):
         extras = scrapeDC(self.fetcher, DCpublicurl + dcid, teacherURL)            
         _donors = [c for c in extras['comments'] if (not c['is_teacher'] and self.interesting(c))]
+        self.addstatedata(extras, p.state)
         extras['donors'] = self.trim(_donors, p)
         extras['donorcount'] = len(extras['donors'])
         extras['numProjectsDistrictText'] = self.ordinal2word(extras['num_proj_in_district'])
-        extras['numdonors'] = self.cardinal2word(extras['ins']+extras['outs'])
-        self.addstatedata(extras, p.state)
+        extras['numdonors'] = extras['ins']-extras['outs']
+        extras['numdonorsText'] = self.cardinal2word(extras['numdonors'])
+        extras['numdonors-2'] = extras['numdonors']-2
+        extras['numdonors-2Text'] = self.cardinal2word(extras['numdonors-2'])
         return extras
 
     def post(self):

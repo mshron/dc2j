@@ -3,7 +3,7 @@
 <p>This email is an automated notification to let you know that a teacher at {{ p.schoolName }} in {{ p.city }} has completed a fundraiser for ${{ p.money }} entitled "{{ p.title }}" </p>
 <p>{{ p.teacher }}, the teacher, said that</p>
 <p style="margin-left:2em"><em>{{ p.fulfillmentTrailer }}</em></p>
-<p>This is the teacher's {{ extras.teacherNumProjectsText }} on <a href="{{ url }}&action=u">DonorsChoose</a>, a free micro-philanthropy site for front-line public school educators, and the {{ extras.numProjectsDistrictText }} project for the school district. {{ extras.numdonors }} donors helped to complete the rpoject; {% if extras.instate %} {{ extras.numInstateDonorsText }} from in-state {% endif %} {% if extras.instate and extras.outofstate %} and {% endif %}
+<p>This is the teacher's {{ extras.teacherNumProjectsText }} on <a href="{{ url }}&action=u">DonorsChoose</a>, a free micro-philanthropy site for front-line public school educators, and the {{ extras.numProjectsDistrictText }} project for the school district. {{ extras.numdonorsText }} donors helped to complete the rpoject; {% if extras.instate %} {{ extras.numInstateDonorsText }} from in-state {% endif %} {% if extras.instate and extras.outofstate %} and {% endif %}
 {% if extras.outofstate %} {{ extras.numOutstateDonorsText }} from out-of-state {% endif %} contributed.</p>
 </p>
 {% for donor in extras.donors %}
