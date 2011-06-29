@@ -12,7 +12,7 @@ from parse_project_page import scrapeDC
 class Compose(webapp.RequestHandler):
     def compose(self,p, j, n, extras):
         urlparams = {'jid': j.jid, 'dcid': p.dcid}
-        url = 'http://localhost:8081/dc/project?' +\
+        url = 'http://dc2jpr.appspot.com:8081/dc/project?' +\
                               urlencode(urlparams)
         template_values = {'p': p, 'j': j, 'n': n, 
                             'extras': extras,
@@ -85,7 +85,9 @@ class Compose(webapp.RequestHandler):
     def addstatedata(self, extras, state):
         statecounts = extras['statecounts']
         instate = statecounts[state]
+        extras['ins'] = instate
         outstate = sum(map(int,statecounts.values()))-instate
+        extras['outs'] = oustate
         extras['instate'] = instate > 0
         extras['outofstate'] = outstate > 0
         extras['numInstateDonorsText'] = self.cardinal2word(instate) + \
@@ -120,13 +122,15 @@ class Compose(webapp.RequestHandler):
                 q = 0
             quality.append(q)
         idx = sorted(range(len(quality)), key=quality.__getitem__, reverse=True)
-        return [_donors[i] for i in idx][:3]
+        return [_donors[i] for i in idx][:2]
 
     def getextras(self, dcid, p):
         extras = scrapeDC(self.fetcher, DCpublicurl + dcid, teacherURL)            
         _donors = [c for c in extras['comments'] if (not c['is_teacher'] and self.interesting(c))]
         extras['donors'] = self.trim(_donors, p)
         extras['donorcount'] = len(extras['donors'])
+        extras['numProjectsDistrictText'] = self.ordinal2word(extras['num_proj_in_district'])
+        extras['numdonors'] = self.cardinal2word(extras['ins']+extras['outs'])
         self.addstatedata(extras, p.state)
         return extras
 
