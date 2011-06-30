@@ -1,0 +1,75 @@
+<html>
+    <head>
+    <style type="text/css">
+    #logo{
+        float:right;
+        margin-bottom:1em;
+    }
+    #email{
+        width:34em;
+        float:left;
+        margin-right: 1em; 
+        margin-left: 3em;
+    }
+    #about{
+        margin-left:2em;
+        width:300px;
+        float:left;
+        text-align:left;
+    }
+    body{
+        font-family: sans-serif;
+        line-height: 150%;
+    }
+    p{
+        margin-left:1em;
+        text-align:left;
+    }
+    h1{
+        font-family: Gill Sans, Verdana;
+	    font-size: 20px;
+    	font-weight: lighter;
+    	font-variant: normal;
+    	text-transform: uppercase;
+    	color: #666666;
+        margin-top: 10px;
+    	letter-spacing: 0.2em;
+    }
+    h3{
+        margin-left:1em;
+        font-family: Gill Sans, Verdana;
+	    font-size: 13px;
+    	line-height: 14px;
+    	text-transform: uppercase;
+    	letter-spacing: 2px;
+    	font-weight: bold;
+    }
+    .email{
+        font-size: 18px;
+    }
+    #header{
+        background:#f5f5f5;
+        padding:1em;
+        padding-left:4em;
+        margin-bottom:1em;
+        outline:2px;
+        outline-color:black;
+    }
+    </style>
+    <title>the donors choose automatic press release system</title>
+    </head>
+    <body>
+    <div id="header">
+    <h1>The Donors Choose Automatic Press Release System</h1>
+    
+    </div>
+    
+    <div id="email">
+        <h3 class="email">Recent emails sent out by dc2j</h3>
+    {% for letter in l %}
+    {{ letter.html }}
+    {% endfor %}
+    </div>
+    
+    </body>
+</html>
