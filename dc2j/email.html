@@ -17,5 +17,7 @@ Attn: {% if j.isPerson %} {{ j.fullName }},{% endif %} {{ n.name }}</div>
 {% endfor %}
 <p style="background: #d2e2f1; padding: 1em; font-size: 110%; font-family: "Helvetica", Tahoma; font-weight: lighter;;">See <a href="{{ url }}&action=u">this project</a> on <a href="http://www.donorschoose.org"/>DonorsChoose</a>.</p>
 </div>
+<div class="hidden">
 <p style="font-size:70%; margin-left: 3em; font-weight: lighter; tex-transform: uppercase; color: #666666"><a href="http://dc2jpr.appspot.com/input/unsubscribe?jid={{ j.jid }}">stop receiving these alerts.</a></p>
 <img src="{{ url }}&action=i"/>
+</div>
