@@ -64,7 +64,7 @@ class Compose(webapp.RequestHandler):
         if n == 1:
             return "One"
         if n < 21:
-            return ['Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty'][n-2]
+            return ['two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'][n-2]
         else:
             return str(n)
 
@@ -134,7 +134,7 @@ class Compose(webapp.RequestHandler):
         extras['donorcount'] = len(extras['donors'])
         extras['numProjectsDistrictText'] = self.ordinal2word(extras['num_proj_in_district'])
         extras['numdonors'] = extras['ins']-extras['outs']
-        extras['numdonorsText'] = self.cardinal2word(extras['numdonors'])
+        extras['numdonorsText'] = self.cardinal2word(extras['numdonors']).capitalize()
         extras['numdonors-2'] = extras['numdonors']-2
         extras['numdonors-2Text'] = self.cardinal2word(extras['numdonors-2'])
         return extras
