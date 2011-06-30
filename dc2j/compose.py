@@ -93,9 +93,9 @@ class Compose(webapp.RequestHandler):
         extras['instate'] = instate > 0
         extras['outofstate'] = outstate > 0
         extras['numInstateDonorsText'] = self.cardinal2word(instate) + \
-                                (' person' if instate==1 else ' people')
+                                (' donor' if instate==1 else ' donors')
         extras['numOutstateDonorsText'] = self.cardinal2word(outstate) + \
-                                (' person' if instate==1 else ' people')
+                                (' donor' if instate==1 else ' donors')
         extras['teacherNumProjectsText'] =  self.ordinal2word(extras['teacherNumProjects']) + \
                                  ' completed project'
 
