@@ -1,10 +1,15 @@
 <html>
     <head>
     <style type="text/css">
+    #logo{
+        float:right;
+        margin-bottom:1em;
+    }
     #email{
         width:34em;
         float:left;
         margin-right: 1em; 
+        margin-left: 3em;
     }
     #about{
         margin-left:2em;
@@ -19,7 +24,6 @@
         margin-left:1em;
         text-align:left;
     }
-
     h1{
         font-family: "Helvetica", Tahoma;
 	    font-size: 20px;
@@ -39,6 +43,9 @@
     	letter-spacing: 2px;
     	font-weight: bold;
     }
+    .email{
+        font-size: 18px;
+    }
     #header{
         background:#f5f5f5;
         padding:1em;
@@ -49,12 +56,14 @@
     <body>
     <div id="header">
     <h1>DC2J : <br/> The Donors Choose Automatic Press Release System</h1>
+    
     </div>
     
     <div id="email">
-        <h3>Recent emails sent out by dc2j</h3>
+        <h3 class="email">Recent emails sent out by dc2j</h3>
     {% for letter in l %}
     {{ letter.html }}
+    <hr/>
     {% endfor %}
     </div>
     <div id="about">
@@ -63,6 +72,12 @@
         <p>Our project is an automatic press release system that sends compelling summaries of completed Donors Choose proposals to local television and newspaper journalists.</p>
 <h3>How it Works</h3>
 <p>Magic!</p>
+<h3>About DonorsChoose.org</h3>
+<p>
+DonorsChoose.org is an online charity that makes it easy for anyone to help students in need.</p>
+<p>
+<a href="http://donorschoose.org"><img id="logo" src="donorschoose_org.gif"/></a>
+</p>
 <h3>Authors</h3>
 <p><a href="http://twitter.com/mshron">Max Shron</a> &amp; Crew:
     <ul>
