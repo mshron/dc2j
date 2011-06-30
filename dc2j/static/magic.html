@@ -26,19 +26,28 @@
         text-align:left;
     }
     h1{
-        font-family: Gill Sans, Verdana;
-	    font-size: 20px;
-    	font-weight: lighter;
+        font-family: "Helvetica", Tahoma;
+	    font-size: 22px;
     	font-variant: normal;
     	text-transform: uppercase;
-    	color: #666666;
+    	color: black;
         margin-top: 10px;
     	letter-spacing: 0.2em;
+    	font-weight: bold;
     }
     h3{
         margin-left:1em;
         font-family: Gill Sans, Verdana;
 	    font-size: 13px;
+    	line-height: 14px;
+    	text-transform: uppercase;
+    	letter-spacing: 2px;
+    	font-weight: bold;
+    }
+    h4{
+        margin-left:1em;
+        font-family: Gill Sans, Verdana;
+	    font-size: 11px;
     	line-height: 14px;
     	text-transform: uppercase;
     	letter-spacing: 2px;
@@ -65,10 +74,11 @@
     </div>
     
     <div id="email">
-        <h3 class="email">Recent emails sent out by dc2j</h3>
-    {% for letter in l %}
-    {{ letter.html }}
-    {% endfor %}
+        <h3 class="email">How it works</h3>
+        
+        <h4>Coverage</h4>
+        
+        <h4>
     </div>
     
     </body>
