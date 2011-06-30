@@ -109,6 +109,7 @@ class Compose(webapp.RequestHandler):
     def trim(self, _donors, p):
         locale_flag = False
         quality = []
+        names = []
         for comment in _donors:
             q = comment['text'].count('.')
             if comment['citystate']:
@@ -122,6 +123,9 @@ class Compose(webapp.RequestHandler):
                     logging.info('commenting diversity satisfied!')
             if "strong believer" in comment['text']:
                 q = 0
+            if comment['name'] in names:
+                q = 0
+            names.append(comment['name'])
             quality.append(q)
         idx = sorted(range(len(quality)), key=quality.__getitem__, reverse=True)
         return [_donors[i] for i in idx][:2]
