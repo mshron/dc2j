@@ -51,10 +51,11 @@
         background:#f5f5f5;
         padding:1em;
         margin-bottom:1em;
-        outline:1px;
-        outline-color:invert;
+        outline:2px;
+        outline-color:black;
     }
     </style>
+    <title>dc2jpr : the donors choose automatic press release system</title>
     </head>
     <body>
     <div id="header">
@@ -66,7 +67,6 @@
         <h3 class="email">Recent emails sent out by dc2j</h3>
     {% for letter in l %}
     {{ letter.html }}
-    <hr/>
     {% endfor %}
     </div>
     <div id="about">
@@ -78,9 +78,6 @@
 <h3>About DonorsChoose.org</h3>
 <p>
 DonorsChoose.org is an online charity that makes it easy for anyone to help students in need.</p>
-<p>
-<a href="http://donorschoose.org"><img id="logo" src="donorschoose_org.gif"/></a>
-</p>
 <h3>Authors</h3>
 <p><a href="http://twitter.com/mshron">Max Shron</a> &amp; Crew:
     <ul>
