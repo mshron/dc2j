@@ -202,6 +202,7 @@ class QueryProjectDC(webapp.RequestHandler):
             return
         p = _p[0]
         url = self.queryURL(p)
+        logging.info(url)
         proposal = self.fetch(url)
         if proposal['totalProposals'] != '1': #inbetween stage or deleted
             p.accessfails += 1

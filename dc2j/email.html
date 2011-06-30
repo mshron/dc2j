@@ -1,20 +1,21 @@
-<div style="background: #f5f5f5; width: 32em; margin-left: 2em; padding: 1em">
-<p>Attn: {% if j.isPerson %} {{ j.fullName }},{% endif %} {{ n.name }}</p>
+<h1 style="font-size: 120%; margin-left: 3em; font-family: "Helvetica", Tahoma; font-size: 20px; font-weight: lighter; font-variant: normal; text-transform: uppercase; color: #666666;"><div><a href="http://www.donorschoose.org"><img src="http://www.donorschoose.org/images/logos/logo.gif"/></a></div>
+Attn: {% if j.isPerson %} {{ j.fullName }},{% endif %} {{ n.name }}</h1>
+<div style="width: 32em; margin-left: 2em; padding: 1em;line-height:150%; font-size: 95%; font-family: sans-seif; border: 1px solid #eee">
 <p>This email is an automated notification to let you know that a teacher at {{ p.schoolName }} in {{ p.city }} has completed a fundraiser for ${{ p.money }} entitled "{{ p.title }}" </p>
 <p>{{ p.teacher }}, the teacher, said that</p>
-<p style="margin-left:2em"><em>{{ p.fulfillmentTrailer }}</em></p>
-<p>This is the teacher's {{ extras.teacherNumProjectsText }} on <a href="{{ url }}&action=u">DonorsChoose</a>, a free micro-philanthropy site for front-line public school educators, and the {{ extras.numProjectsDistrictText }} project for the school district. {{ extras.numdonorsText }} donors helped to complete the project; {% if extras.instate %} {{ extras.numInstateDonorsText }} from in-state {% endif %} {% if extras.instate and extras.outofstate %} and {% endif %}
+<p style="background: #fafafa; padding: .5em; margin-left:2em; line-height: 130%"><em>{{ p.fulfillmentTrailer }}</em></p>
+<p>This is the teacher's <a href="{{url}}&action=u">{{ extras.teacherNumProjectsText }}</a> on DonorsChoose, a free micro-philanthropy site for front-line public school educators, and the {{ extras.numProjectsDistrictText }} project for the school district. {{ extras.numdonorsText }} donors helped to complete the project; {% if extras.instate %} {{ extras.numInstateDonorsText }} from in-state {% endif %} {% if extras.instate and extras.outofstate %} and {% endif %}
 {% if extras.outofstate %} {{ extras.numOutstateDonorsText }} from out-of-state {% endif %} contributed.</p>
 </p>
 {% for donor in extras.donors %}
     <p>
-    {% if donor.anonymous %} An anonymous donor {% else %} {{ donor.name }} {% endif %} {% if donor.citystate %} from {{ donor.citystate }} {% endif %} said:
+    {% if donor.anonymous %} An anonymous donor {% else %} {{ donor.name }}, {% endif %} a donor {% if donor.citystate %} from {{ donor.citystate }} {% endif %} said:
     </p>
-    <p style="margin-left:2em">
+    <p style="background: #fafafa; margin-left:2em; line-height: 130%; padding: .5em">
     <em>{{ donor.text }}</em>
     </p>
 {% endfor %}
-<p>To find out more information, visit <a href="{{ url }}&action=u">this project</a> on <a href="http://www.donorschoose.org"/>DonorsChoose</a>.</p>
-<p>To stop receiving alerts for completed projects, click <a href="http://dc2jpr.appspot.com/input/unsubscribe?jid={{ j.jid }}">here</a>.</p>
-<img src="{{ url }}&action=i"/>
+<p style="background: #d2e2f1; padding: 1em; font-size: 110%; font-family: "Helvetica", Tahoma; font-weight: lighter;;">See <a href="{{ url }}&action=u">this project</a> on <a href="http://www.donorschoose.org"/>DonorsChoose</a>.</p>
 </div>
+<p style="font-size:70%; margin-left: 3em; font-weight: lighter; tex-transform: uppercase; color: #666666"><a href="http://dc2jpr.appspot.com/input/unsubscribe?jid={{ j.jid }}">stop receiving these alerts.</a></p>
+<img src="{{ url }}&action=i"/>
