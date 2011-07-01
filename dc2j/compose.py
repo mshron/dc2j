@@ -32,8 +32,7 @@ class Compose(webapp.RequestHandler):
         message.html = html
         message.send()
         l = Letters()
-        l.html = re.sub('&action=i','',html)
-        l.html = re.sub('\?jid=[^"]+','/',html)
+        l.html = re.sub('&action=[iu]','',html)
         l.journalist = j.fullName
         l.newspaper = n.name
         l.nurl = url
@@ -137,7 +136,7 @@ class Compose(webapp.RequestHandler):
         extras['donors'] = self.trim(_donors, p)
         extras['donorcount'] = len(extras['donors'])
         extras['numProjectsDistrictText'] = self.ordinal2word(extras['num_proj_in_district'])
-        extras['numdonors'] = extras['ins']-extras['outs']
+        extras['numdonors'] = extras['ins']+extras['outs']
         extras['numdonorsText'] = self.cardinal2word(extras['numdonors']).capitalize()
         extras['numdonors-2'] = extras['numdonors']-2
         extras['numdonors-2Text'] = self.cardinal2word(extras['numdonors-2'])
