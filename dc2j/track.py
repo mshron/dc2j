@@ -8,6 +8,7 @@ class ProjectURL(webapp.RequestHandler):
         jid = self.request.get('jid') 
         action = self.request.get('action')
         j = Journalist.all().filter('jid =',jid).get()
+        logging.info(action)
         if action == 'u':
             j.actions.append('U:%s'%dcid)
             self.redirect(DCpublicurl + dcid)  

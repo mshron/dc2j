@@ -42,9 +42,9 @@
     	font-weight: bold;
     }
     h3{
-        margin-left:0em;
+        margin-left:1em;
         font-family: Gill Sans, Verdana;
-	    font-size: 13px;
+	    font-size: 16px;
     	line-height: 14px;
     	text-transform: uppercase;
     	letter-spacing: 2px;
@@ -67,16 +67,31 @@
     .hidden {
         display: none;
     }
+    #email p {
+        padding-left: 2em;
+    }
+    #email h2 {
+        padding-left: 1em;
+    }
+    #email h4 {
+        padding-left: 3.5em;
+        font-family: Gill Sans, Verdana;
+    	text-transform: uppercase;
+    	font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
     </style>
-    <title>dc2jpr : the donors choose automatic press release system</title>
+    <title>DC2J &middot; the DonorsChoose.org automatic press release system</title>
     </head>
     <body>
         <a name="top"></a>
     <div id="header">
-        
-    <h1>THE Donors Choose Automatic Press Release System</h1>
+       
+    <h1>DC2J &middot; The Donors Choose.Org<br/> Automatic Press Release System</h1>
+
       <div id="explain">
-        <p>Non-profit public relations is difficult, especially for distributed organizations like Donors Choose. </p><p><strong>DC2J</strong> automatically composes compelling summaries of completed Donors Choose proposals and notifies local, especially small-town, television and newspaper journalists.</p>
+        <p>Non-profit public relations is difficult, especially for distributed organizations like DonorsChoose.org. </p><p><strong>DC2J</strong> automatically composes compelling summaries of finished fundraising proposals and notifies local television and newspaper journalists, especially those in small towns.</p>
       </div>
     
     </div>
@@ -85,20 +100,24 @@
 
         <p>For better or worse, modern journalism  operates on a push model.</p><p> Those doing the pushing are called public relations, and most successful, large, for-profit entities can afford to pay someone to do it for them. Such firms control control a disproportionate amount of news. Non-profits, lacking the funds, do not have this luxury.</p><p> With technology we can automate the PR process to help non-profits get coverage in the communities they affect. <strong>DC2J</strong> is such a project.</p>
 
+
         <h3 class="email">How</h3>
 
-        <h4>Newspaper Coverage</h4>
+        <h4>Gathering Data</h4>
         <p>By combing through lists of newspapers and television stations on the Internet, we were able to build a comprensive library of media outlets throughout the United States. </p>
-        <p>We decided to focus where the effort was most likely to pay off. Half of all DonorsChoose projects occur in the top five states in the US; another full quarter occur in the next ten. As places for growth, but with some exposure, we decided to focus on these.</p>
-        <p>To collect the names and email addreses of the appropriate contact people, we built a <a href="http://dc2jpr.appspot.com/input/journalists">friendsourcing interface</a> to allow our friends to pitch in and help. In a few days we were able to gather the contact information for hundreds of media outlets needed to power <strong>DC2J</strong>.</p>
-        <h4>Project Monitoring</h4>
+        <p>We decided to focus where the effort was most likely to pay big dividends. Half of all DonorsChoose.org projects occur in the top five states in the US. Another full quarter occur in the next ten. As places for growth, but with some exposure, we decided to focus on the latter.</p> 
+        <p>To collect the appropriate contact information we built a <a href="http://dc2jpr.appspot.com/input/journalists">friendsourcing interface</a> to allow our friends to pitch in and help. In a few days we were able to gather the contact information for hundreds of media outlets needed to power <strong>DC2J</strong>.</p>
+        <h4>Monitoring Projects</h4>
         
-        <p><a href="http://www.donorschoose.org">DonorsChoose</a>, as part of the <a href="http://www.donorschoose.org/hacking-education">hacking education</a> contest, opened up their search API to allow developers to build on their techology</p>
-        <p>Using <a href="http://appengine.google.com">Google App Engine</a> we wrote a monitoring system to track the status of projects in the coverage areas of the newspapers. We deployed a text analysis system of our own design to figure out coverage areas, but in time we realized that sensible defaults worked just fine.</p>
+        <p><a href="http://www.donorschoose.org">DonorsChoose.org</a>, as part of the <a href="http://www.donorschoose.org/hacking-education">hacking education</a> contest, opened up their search API to allow developers to build on their techology</p>
+        <p>Using the excellent <a href="http://appengine.google.com">Google App Engine</a> we wrote a monitoring system to track the status of projects in the coverage areas of the newspapers. We deployed a text analysis system of our own design to figure out coverage areas, but in time we realized that sensible defaults worked just fine.</p>
 
-        <p>When a project is completed, we filter the data in dozens of different ways to shake out what we think is the best message we can and send it on its way. To assist with analytics, we built a pixel and url tracking system.</p>
+        <p>When a project is completed, we filter the data in dozens of different ways to shake out what we think is the best message we can, and send it on its way. To assist with analytics, we built a pixel and url tracking system.</p>
 
-        <p>To see our code, visit us on <a href="http://github.com/mshron/dc2j">GitHub</a></p>
+        <p>All of our code is available on <a href="http://github.com/mshron/dc2j">GitHub</a></p>
+        
+        <h3>Thanks</h3>
+        <p>Many thanks to the people who helped us make this thing happen, including, but not limited to Sarah Pickman, Chrys Wu, Jenny 8. Lee, Daniel Andres and Dan Vanderkam (bringer of &#8216;yak shaving&#8217;). Apologies to those who we forgot; </p>
     </div>
     
     </body>
