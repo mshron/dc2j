@@ -21,7 +21,7 @@ class Compose(webapp.RequestHandler):
         html = template.render(htmlpath, template_values)
         textpath = os.path.join(os.path.dirname(__file__), 'email.txt')
         plaintext = template.render(textpath, template_values)
-        subject = "Micro-philanthropy at work at %s"%(p.schoolName)
+        subject = "Citizen philanthropy at work at %s"%(p.schoolName)
         return subject, html, plaintext, url
 
     def mail(self, j, n, subject, html, plaintext, url):
@@ -32,8 +32,7 @@ class Compose(webapp.RequestHandler):
         message.html = html
         message.send()
         l = Letters()
-        l.html = re.sub('&action=i','',html)
-        l.html = re.sub('\?jid=[^"]+','/',html)
+        l.html = re.sub('&action=[iu]','',html)
         l.journalist = j.fullName
         l.newspaper = n.name
         l.nurl = url
@@ -64,7 +63,7 @@ class Compose(webapp.RequestHandler):
         if n == 1:
             return "One"
         if n < 21:
-            return ['Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty'][n-2]
+            return ['two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'][n-2]
         else:
             return str(n)
 
@@ -93,9 +92,9 @@ class Compose(webapp.RequestHandler):
         extras['instate'] = instate > 0
         extras['outofstate'] = outstate > 0
         extras['numInstateDonorsText'] = self.cardinal2word(instate) + \
-                                (' person' if instate==1 else ' people')
+                                (' donor' if instate==1 else ' donors')
         extras['numOutstateDonorsText'] = self.cardinal2word(outstate) + \
-                                (' person' if instate==1 else ' people')
+                                (' donor' if instate==1 else ' donors')
         extras['teacherNumProjectsText'] =  self.ordinal2word(extras['teacherNumProjects']) + \
                                  ' completed project'
 
@@ -109,6 +108,7 @@ class Compose(webapp.RequestHandler):
     def trim(self, _donors, p):
         locale_flag = False
         quality = []
+        names = []
         for comment in _donors:
             q = comment['text'].count('.')
             if comment['citystate']:
@@ -122,6 +122,9 @@ class Compose(webapp.RequestHandler):
                     logging.info('commenting diversity satisfied!')
             if "strong believer" in comment['text']:
                 q = 0
+            if comment['name'] in names:
+                q = 0
+            names.append(comment['name'])
             quality.append(q)
         idx = sorted(range(len(quality)), key=quality.__getitem__, reverse=True)
         return [_donors[i] for i in idx][:2]
@@ -133,8 +136,8 @@ class Compose(webapp.RequestHandler):
         extras['donors'] = self.trim(_donors, p)
         extras['donorcount'] = len(extras['donors'])
         extras['numProjectsDistrictText'] = self.ordinal2word(extras['num_proj_in_district'])
-        extras['numdonors'] = extras['ins']-extras['outs']
-        extras['numdonorsText'] = self.cardinal2word(extras['numdonors'])
+        extras['numdonors'] = extras['ins']+extras['outs']
+        extras['numdonorsText'] = self.cardinal2word(extras['numdonors']).capitalize()
         extras['numdonors-2'] = extras['numdonors']-2
         extras['numdonors-2Text'] = self.cardinal2word(extras['numdonors-2'])
         return extras

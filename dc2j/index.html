@@ -1,68 +1,99 @@
 <html>
     <head>
     <style type="text/css">
+    #logo{
+        float:right;
+        margin-bottom:1em;
+    }
     #email{
         width:34em;
         float:left;
         margin-right: 1em; 
+        margin-left: 3em;
     }
     #about{
-        margin-left:2em;
+        margin-left:4em;
         width:300px;
         float:left;
         text-align:left;
     }
+    #explain {
+        width: 24em;
+        margin-left: 1em;
+        font-size: 120%;
+        
+    }
     body{
-        font-family:sans-serif;
+        font-family: sans-serif;
+        line-height: 150%;
     }
     p{
         margin-left:1em;
         text-align:left;
     }
-
     h1{
         font-family: "Helvetica", Tahoma;
-	    font-size: 20px;
-    	font-weight: lighter;
+	    font-size: 22px;
     	font-variant: normal;
     	text-transform: uppercase;
-    	color: #666666;
+    	color: black;
         margin-top: 10px;
     	letter-spacing: 0.2em;
+    	font-weight: bold;
     }
     h3{
         margin-left:1em;
         font-family: Gill Sans, Verdana;
-	    font-size: 11px;
+	    font-size: 13px;
     	line-height: 14px;
     	text-transform: uppercase;
     	letter-spacing: 2px;
     	font-weight: bold;
     }
+    .email{
+        font-size: 16px;
+    }
+    .totop{
+        font-size: 14px
+    }
     #header{
         background:#f5f5f5;
         padding:1em;
+        padding-left:4em;
         margin-bottom:1em;
+        outline:2px;
+        outline-color:black;
+    }
+    .hidden {
+        display: none;
     }
     </style>
+    <title>dc2jpr : the donors choose automatic press release system</title>
     </head>
     <body>
+        <a name="top"></a>
     <div id="header">
-    <h1>DC2J : <br/> The Donors Choose Automatic Press Release System</h1>
+        
+    <h1>The Donors Choose Automatic Press Release System</h1>
+      <div id="explain">
+        <p>Non-profit public relations is difficult, especially for distributed organizations like Donors Choose. </p><p><strong>DC2J</strong> automatically composes compelling summaries of completed Donors Choose proposals and notifies local, especially small-town, television and newspaper journalists.</p>
+      </div>
+    
     </div>
     
     <div id="email">
-        <h3>Recent emails sent out by dc2j</h3>
+        <h3 class="email">Recent emails sent out by dc2j</h3>
     {% for letter in l %}
     {{ letter.html }}
+    <a class="totop" href="#top">back to top</a>
     {% endfor %}
     </div>
     <div id="about">
-        <h3>About DC2J</h3>
-        <p>Non-profit public relations is difficult, especially for distributed organizations like Donors Choose.</p>
-        <p>Our project is an automatic press release system that sends compelling summaries of completed Donors Choose proposals to local television and newspaper journalists.</p>
 <h3>How it Works</h3>
-<p>Magic!</p>
+<p><a href="static/magic.html">Magic!</a></p>
+<h3>About DonorsChoose.org</h3>
+<p>
+DonorsChoose.org is an online charity that makes it easy for anyone to help students in need.</p>
 <h3>Authors</h3>
 <p><a href="http://twitter.com/mshron">Max Shron</a> &amp; Crew:
     <ul>

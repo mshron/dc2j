@@ -4,7 +4,7 @@ from google.appengine.ext.webapp import template
 
 class Index(webapp.RequestHandler):
     def get(self):
-        l = Letters.all().order('-time').fetch(10) 
+        l = Letters.all().order('-time').fetch(5) 
         htmlpath = os.path.join(os.path.dirname(__file__), 'index.html')
         self.response.out.write(template.render(htmlpath, {'l': l}))
 
