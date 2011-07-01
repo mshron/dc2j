@@ -21,7 +21,7 @@ class Compose(webapp.RequestHandler):
         html = template.render(htmlpath, template_values)
         textpath = os.path.join(os.path.dirname(__file__), 'email.txt')
         plaintext = template.render(textpath, template_values)
-        subject = "Micro-philanthropy at work at %s"%(p.schoolName)
+        subject = "Citizen philanthropy at work at %s"%(p.schoolName)
         return subject, html, plaintext, url
 
     def mail(self, j, n, subject, html, plaintext, url):

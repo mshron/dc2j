@@ -42,7 +42,7 @@
     	font-weight: bold;
     }
     h3{
-        margin-left:1em;
+        margin-left:0em;
         font-family: Gill Sans, Verdana;
 	    font-size: 13px;
     	line-height: 14px;
@@ -74,26 +74,31 @@
         <a name="top"></a>
     <div id="header">
         
-    <h1>The Donors Choose Automatic Press Release System</h1>
+    <h1>THE Donors Choose Automatic Press Release System</h1>
       <div id="explain">
-        <p>Non-profit public relations is difficult, especially for distributed organizations like Donors Choose. </p><p><strong>DC2J</strong> automatically composes compelling summaries of completed Donors Choose proposals and notifies local, especially small-town, television and newspaper journalists.</p>
+        <p>Non-profit public relations is difficult, especially for distributed organizations like DonorsChoose. </p><p><strong>DC2J</strong> automatically composes compelling summaries of completed DonorsChoose proposals and notifies local, especially small-town, television and newspaper journalists.</p>
       </div>
     
     </div>
      <div id="email">
-        <h3 class="email">How it works</h3>
-        
+        <h3 class="email">Why</h3>
+
+        <p>For better or worse, modern journalism  operates on a push model.</p><p> Those doing the pushing are called public relations, and most successful, large, for-profit entities can afford to pay someone to do it for them. Such firms control control a disproportionate amount of news. Non-profits, lacking the funds, do not have this luxury.</p><p> With technology we can automate the PR process to help non-profits get coverage in the communities they affect. <strong>DC2J</strong> is such a project.</p>
+
+        <h3 class="email">How</h3>
+
+        <h4>Newspaper Coverage</h4>
+        <p>By combing through lists of newspapers and television stations on the Internet, we were able to build a comprensive library of media outlets throughout the United States. </p>
+        <p>We decided to focus where the effort was most likely to pay off. Half of all DonorsChoose projects occur in the top five states in the US; another full quarter occur in the next ten. As places for growth, but with some exposure, we decided to focus on these.</p>
+        <p>To collect the names and email addreses of the appropriate contact people, we built a <a href="http://dc2jpr.appspot.com/input/journalists">friendsourcing interface</a> to allow our friends to pitch in and help. In a few days we were able to gather the contact information for hundreds of media outlets needed to power <strong>DC2J</strong>.</p>
         <h4>Project Monitoring</h4>
         
-        <p>Don't forget</p>
-            
-        <h4>Newspaper Coverage</h4>
-        
-        <p>To use Paragraph Tags</p>
-        
-        <h4>Crowdsourcing Contact Details</h4>
-        
-        <p>For teh Awesome Formatting</p>
+        <p><a href="http://www.donorschoose.org">DonorsChoose</a>, as part of the <a href="http://www.donorschoose.org/hacking-education">hacking education</a> contest, opened up their search API to allow developers to build on their techology</p>
+        <p>Using <a href="http://appengine.google.com">Google App Engine</a> we wrote a monitoring system to track the status of projects in the coverage areas of the newspapers. We deployed a text analysis system of our own design to figure out coverage areas, but in time we realized that sensible defaults worked just fine.</p>
+
+        <p>When a project is completed, we filter the data in dozens of different ways to shake out what we think is the best message we can and send it on its way. To assist with analytics, we built a pixel and url tracking system.</p>
+
+        <p>To see our code, visit us on <a href="http://github.com/mshron/dc2j">GitHub</a></p>
     </div>
     
     </body>

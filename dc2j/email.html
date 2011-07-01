@@ -4,7 +4,7 @@ Attn: {% if j.isPerson %} {{ j.fullName }},{% endif %} {{ n.name }}</div>
 <p>This email is a notification that a teacher at {{ p.schoolName }} in {{ p.city }} has completed a fundraiser for ${{ p.money }} entitled "{{ p.title }}" </p>
 <p>{{ p.teacher }}, the teacher, said that</p>
 <p style="background: #fafafa; padding: .5em; margin-left:2em; line-height: 130%"><em>{{ p.fulfillmentTrailer }}</em></p>
-<p>This is the teacher's <a href="{{url}}&action=u">{{ extras.teacherNumProjectsText }}</a> on DonorsChoose, a free micro-philanthropy site for front-line public school educators, and the {{ extras.numProjectsDistrictText }} project for the school district. {{ extras.numdonorsText }} donors helped to complete the project; {% if extras.instate %} {{ extras.numInstateDonorsText }} from in-state{% endif %} {% if extras.instate and extras.outofstate %} and {% endif %}
+<p>This is the teacher's <a href="{{url}}&action=u">{{ extras.teacherNumProjectsText }}</a> on DonorsChoose.org, a free micro-philanthropy site for front-line public school educators, and the {{ extras.numProjectsDistrictText }} project for the school district. {{ extras.numdonorsText }} donors helped to complete the project; {% if extras.instate %} {{ extras.numInstateDonorsText }} from in-state{% endif %} {% if extras.instate and extras.outofstate %} and {% endif %}
 {% if extras.outofstate %} {{ extras.numOutstateDonorsText }} from out-of-state{% endif %}.</p>
 </p>
 {% for donor in extras.donors %}
@@ -15,9 +15,9 @@ Attn: {% if j.isPerson %} {{ j.fullName }},{% endif %} {{ n.name }}</div>
     <em>{{ donor.text }}</em>
     </p>
 {% endfor %}
-<p style="background: #d2e2f1; padding: 1em; font-size: 125%; font-family: "Helvetica", Tahoma; font-weight: bold;">See <a href="{{ url }}&action=u">this project</a> on <a href="http://www.donorschoose.org"/>DonorsChoose</a>.</p>
+<p style="background: #d2e2f1; padding: 1em; font-size: 125%; font-family: "Helvetica", Tahoma; font-weight: bold;">See <a href="{{ url }}&action=u">this project</a> on <a href="http://www.donorschoose.org"/>DonorsChoose.org</a>.</p>
 </div>
 <div class="hidden">
-<p style="font-size:70%; width: 45em; margin-left: 3em; font-weight: lighter; tex-transform: uppercase; color: #666666">This notice was sent by <a href="http://dc2jpr.appspot.com">DC2J</a>, an independent project helping DonorsChoose gain recognition by alerting local journalists to its successes. It is not owned or operated by DonorsChoose.</p><p style="font-size:70%; margin-left: 3em; font-weight: lighter; tex-transform: uppercase; color: #666666"> <a href="http://dc2jpr.appspot.com/input/unsubscribe?jid={{ j.jid }}">stop receiving these alerts.</a></p>
+<p style="font-size:70%; width: 45em; margin-left: 3em; font-weight: lighter; tex-transform: uppercase; color: #666666">This notice was sent by <a href="http://dc2jpr.appspot.com">DC2J</a>, an independent project helping DonorsChoose.org gain recognition by alerting local journalists to its successes. It is not owned or operated by DonorsChoose.org.</p><p style="font-size:70%; margin-left: 3em; font-weight: lighter; tex-transform: uppercase; color: #666666"> <a href="http://dc2jpr.appspot.com/input/unsubscribe?jid={{ j.jid }}">stop receiving these alerts.</a></p>
 <img src="{{ url }}&action=i"/>
 </div>
